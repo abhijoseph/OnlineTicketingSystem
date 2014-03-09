@@ -28,6 +28,14 @@ namespace OnlineTicketSystem.Web.Database
             
             con.Close();
         }
+        public void RegisterTheater(Theater theater)
+        {
+            String str = "insert into Register values('" + theater.TheaterName + "','" + theater.TheaterCode + "','" + theater.TheaterCode + "','" + theater.Password + "','" + theater.EmailId + "','" + theater.City + "','" + theater.Location + "','" + theater.SeatingCapacity + "')";
+            SqlCommand cmd = new SqlCommand(str, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
 
+        }
     }
 }

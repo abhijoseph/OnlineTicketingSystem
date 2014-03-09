@@ -12,11 +12,16 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Data.SqlClient;
 
+using OnlineTicketSystem.Web.Models;
+using OnlineTicketSystem.Web.Database;
+
 namespace OnlineTicketSystem.Web
 {
     public partial class _ThetrReg : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(@"server=.\;database=onlineticket;uid=sa;pwd=");
+        public DatabaseContext _dbContext = new DatabaseContext();
+        
         string path;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,13 +41,27 @@ namespace OnlineTicketSystem.Web
         }
         protected void Btsub_Click(object sender, EventArgs e)
         {
-            String str = "insert into Register values('" + Txtbxthetrnm.Text + "'," + Txtbxthetrcd.Text + ",'" + txtusername.Text + "','" + Txtthtrpd.Text + "','" + TxtthtrEml.Text + "','" + Ddlcity.SelectedValue + "','" + Ddlloc.SelectedValue + "'," + Txtcap.Text + ",'" + path + "')";
-            SqlCommand cmd = new SqlCommand(str, con);
-            con.Open();
-            cmd.ExecuteNonQuery();
+            Theater theater = new Theater();
+            theater.TheaterName = Txtbxthetrnm.Text;
+            theater.TheaterCode = Txtbxthetrcd.Text;
+           theater.TheaterCode = txtusername.Text;
+            theater.Password = Txtthtrpd.Text;
+            theater.EmailId = TxtthtrEml.Text;
+            theater.City = Ddlcity.SelectedItem.Text;
+            theater.Location = Ddlloc.SelectedItem.Text;
+            theater.SeatingCapacity = Txtcap.Text;
+            
+            //
+            _dbContext.RegisterTheater(theater);
+
+
+            //String str = "insert into Register values('" + Txtbxthetrnm.Text + "'," + Txtbxthetrcd.Text + ",'" + txtusername.Text + "','" + Txtthtrpd.Text + "','" + TxtthtrEml.Text + "','" + Ddlcity.SelectedValue + "','" + Ddlloc.SelectedValue + "'," + Txtcap.Text + ",'" + path + "')";
+            //SqlCommand cmd = new SqlCommand(str, con);
+            //con.Open();
+            //cmd.ExecuteNonQuery();
             //  Response.Write(""+str);
             Label9.Text = "Registered successfully";
-            con.Close();
+            //con.Close();
         }
         protected void FileUpload1_DataBinding(object sender, EventArgs e)
         {

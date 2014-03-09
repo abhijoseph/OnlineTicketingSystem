@@ -38,7 +38,10 @@ namespace OnlineTicketSystem.Web
         {
             User user = new User();
             user.FirstName = TxtbxFirst.Text;
-            //Add all properties here
+            user.LastName=TxtBxLast.Text;
+            user.UserName=TextBxUsername.Text;
+            user.EmailId = TxtEid.Text;
+            user.Password = TxtBxpswd.Text;
             user.DateOfBirth = Ddldate.SelectedItem.Text + "/" + Ddlmnth.SelectedItem.Text + "/" + Ddlyr.SelectedItem.Text;
 
             _dbContext.InsertUser(user);

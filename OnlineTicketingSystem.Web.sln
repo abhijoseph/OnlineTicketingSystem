@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Web Developer Express 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTicketSystem.Web", "OnlineTicketSystem.Web\OnlineTicketSystem.Web.csproj", "{5702F884-534C-4633-B748-95CF28434B99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTicketSystem.Web", "OnlineTicketingSystem.Web\OnlineTicketingSystem.Web.csproj", "{5702F884-534C-4633-B748-95CF28434B99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
