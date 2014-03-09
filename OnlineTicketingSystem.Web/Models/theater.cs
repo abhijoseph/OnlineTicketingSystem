@@ -23,6 +23,7 @@ namespace OnlineTicketSystem.Web.Models
 
         public string SeatingCapacity { get; set; }
 
+        public string ImagePath { get; set; }
        
     }
 }

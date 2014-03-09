@@ -50,7 +50,7 @@ namespace OnlineTicketSystem.Web
             theater.City = Ddlcity.SelectedItem.Text;
             theater.Location = Ddlloc.SelectedItem.Text;
             theater.SeatingCapacity = Txtcap.Text;
-            
+            theater.ImagePath = "~//theaterId//" + Txtbxthetrcd.Text + ".jpg";
             //
             _dbContext.RegisterTheater(theater);
 
