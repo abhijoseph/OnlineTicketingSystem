@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="OnlineTicketSystem.Web.Web" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Online Ticketing System</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <link rel="Stylesheet" href="~\Content\Styles\Site.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 70%;
+        }
+        .style2
+        {
+            width: 297px;
+        }
+        .style3
+        {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .style4
+        {
+            width: 715px;
+        }
+        .style5
+        {
+            width: 297px;
+            height: 22px;
+        }
+        .style6
+        {
+            width: 715px;
+            height: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <span> <img src="Images/onlineticketing-logo.png" alt="Online Ticketing System" style="width:64px;"/> </span>
+        <span> Online Ticketing System</span>
+    </div>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

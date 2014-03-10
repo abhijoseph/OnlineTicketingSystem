@@ -7,6 +7,8 @@ namespace OnlineTicketSystem.Web.Models
 {
     public class User
     {
+        public int UserKey { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

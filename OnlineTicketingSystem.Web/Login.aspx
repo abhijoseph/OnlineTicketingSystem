@@ -1,42 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web._Login" Codebehind="Login.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web._Login" MasterPageFile="~/Web.master" Codebehind="Login.aspx.cs" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <style type="text/css">
-        .style1
-        {
-            width: 70%;
-        }
-        .style2
-        {
-            width: 297px;
-        }
-        .style3
-        {
-            font-size: xx-large;
-            font-weight: 700;
-        }
-        .style4
-        {
-            width: 715px;
-        }
-        .style5
-        {
-            width: 297px;
-            height: 22px;
-        }
-        .style6
-        {
-            width: 715px;
-            height: 22px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
     <table class="style1">
         <caption class="style3">
             Login</caption>
@@ -121,6 +86,4 @@
                 &nbsp;</td>
         </tr>
     </table>
-    </form>
-</body>
-</html>
+</asp:Content>
