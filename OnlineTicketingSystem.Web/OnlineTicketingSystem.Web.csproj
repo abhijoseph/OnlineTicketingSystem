@@ -53,10 +53,12 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Styles\Site.css" />
     <Content Include="Create.aspx" />
     <Content Include="Detail.aspx" />
     <Content Include="Enews.aspx" />
     <Content Include="filmRev.aspx" />
+    <Content Include="Images\onlineticketing-logo.png" />
     <Content Include="latestmovie.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Passwrd.aspx" />
@@ -86,6 +88,7 @@
       <DependentUpon>Create.aspx</DependentUpon>
     </Compile>
     <Compile Include="Database\DatabaseContext.cs" />
+    <Compile Include="Database\SQLHelper.cs" />
     <Compile Include="Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,12 +177,21 @@
     <Compile Include="UserHome.aspx.designer.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web.Master.cs">
+      <DependentUpon>Web.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web.Master.designer.cs">
+      <DependentUpon>Web.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="theaterId\345jpg" />
+    <Content Include="Web.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

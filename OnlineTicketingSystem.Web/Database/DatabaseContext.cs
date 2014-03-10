@@ -53,5 +53,16 @@ namespace OnlineTicketSystem.Web.Database
             return new User();
         }
 
+        public void RegisterTheater(Theater theater)
+        {
+            String str = "insert into Register values('" + theater.TheaterName + "','" + theater.TheaterCode + "','" + theater.TheaterCode + "','" + theater.Password + "','" + theater.EmailId + "','" + theater.City + "','" + theater.Location + "','" + theater.SeatingCapacity + "')";
+            SqlCommand cmd = new SqlCommand(str, _sqlConnection);
+            _sqlConnection.Open();
+            cmd.ExecuteNonQuery();
+            _sqlConnection.Close();
+
+        }
+
+
     }
 }
