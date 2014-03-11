@@ -16,12 +16,13 @@
         }
         .style2
         {
-            width: 297px;
+            width: 200px;
         }
         .style3
         {
-            font-size: 1.1em;
-            font-weight: bold;
+            font-size: 1.3em;
+            padding:5px;
+            
         }
         .style4
         {
@@ -41,9 +42,20 @@
 </head>
 <body>
     <div id="header">
-        <span> <img src="Images/onlineticketing-logo.png" alt="Online Ticketing System" style="width:64px;"/> </span>
-        <span> Online Ticketing System</span>
+        <div>
+            <span> <img src="Images/onlineticketing-logo.png" alt="Online Ticketing System" style="width:32px;"/> </span>
+            <span> Online Ticketing System</span>
+        </div>
     </div>
+    <nav>
+	    <ul>
+		    <li><a href="UserHome.aspx">Home</a></li>
+		    <li><a href="Enews.aspx">Entertainment News!</a></li>
+		    <li><a href="latestmovie.aspx">Latest Movies</a></li>
+		    <li><a href="filmRev.aspx">Film Reviews</a></li>
+		    <li><a href="Login.aspx">Login</a></li>
+	    </ul>
+    </nav>
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">

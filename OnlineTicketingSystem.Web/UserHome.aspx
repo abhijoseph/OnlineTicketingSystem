@@ -1,89 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.UserHome" Codebehind="UserHome.aspx.cs" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            width: 217px;
-        }
-        .style3
-        {
-            width: 267px;
-        }
-        .style4
-        {
-            width: 743px;
-        }
-        .style5
-        {
-            width: 217px;
-            height: 28px;
-        }
-        .style6
-        {
-            width: 267px;
-            height: 28px;
-        }
-        .style7
-        {
-            width: 743px;
-            height: 28px;
-        }
-        .style8
-        {
-            width: 248px;
-        }
-        .style9
-        {
-            width: 248px;
-            height: 28px;
-        }
-        .style10
-        {
-            width: 217px;
-            height: 22px;
-        }
-        .style11
-        {
-            width: 267px;
-            height: 22px;
-        }
-        .style12
-        {
-            width: 248px;
-            height: 22px;
-        }
-        .style13
-        {
-            width: 743px;
-            height: 22px;
-        }
-        .style14
-        {
-            width: 310px;
-        }
-        .style15
-        {
-            width: 310px;
-            height: 28px;
-        }
-        .style16
-        {
-            width: 310px;
-            height: 22px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.UserHome" MasterPageFile="~/Web.master" Codebehind="UserHome.aspx.cs" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     <table class="style1">
         <tr>
             <td class="style2">
@@ -254,6 +170,4 @@
                 &nbsp;</td>
         </tr>
     </table>
-</form>
-</body>
-</html>
+</asp:Content>

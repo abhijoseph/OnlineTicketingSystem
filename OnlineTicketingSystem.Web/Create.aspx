@@ -1,52 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Create" Codebehind="Create.aspx.cs" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <style type="text/css">
-        .style1
-        {
-            width: 62%;
-        }
-        .style2
-        {
-            width: 760px;
-        }
-        .style3
-        {
-            font-size: x-large;
-            font-weight: bold;
-        }
-        .style4
-        {
-            width: 760px;
-            height: 45px;
-        }
-        .style5
-        {
-            width: 760px;
-            height: 3px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Create" MasterPageFile="~/Web.master" Codebehind="Create.aspx.cs" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
+    
     <table class="style1">
         <caption class="style3">
             Registration</caption>
+
         <tr>
-            <td class="style2">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
+            <td class="style2" >
                 <asp:Label ID="LblFirst" runat="server" 
                     Text="First  Name   "></asp:Label>
             </td>
-        </tr>
-        <tr>
+        
             <td id="LblFisrt" class="style2">
                 <asp:TextBox ID="TxtbxFirst" runat="server" 
                     ontextchanged="TxtbxFirst_TextChanged"></asp:TextBox>
@@ -55,20 +19,16 @@
                     style="font-style: italic"></asp:RequiredFieldValidator>
             </td>
         </tr>
-        <tr>
-            <td id="LblFisrt" class="style2">
-                &nbsp;</td>
-        </tr>
+        
         <tr>
             <td class="style2">
                 <asp:Label ID="LblLast" runat="server" 
                     style="font-size: medium; " 
                     Text="Last Name"></asp:Label>
             </td>
-        </tr>
-        <tr>
+        
             <td class="style2">
-                <asp:TextBox ID="TxtBxLast" runat="server" Height="22px" Width="138px"></asp:TextBox>
+                <asp:TextBox ID="TxtBxLast" runat="server" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ControlToValidate="TxtBxLast" ErrorMessage="Enter Last name" 
                     style="font-style: italic"></asp:RequiredFieldValidator>
@@ -78,8 +38,7 @@
             <td class="style2">
                 <asp:Label ID="Label13" runat="server" Text="UserName"></asp:Label>
             </td>
-        </tr>
-        <tr>
+        
             <td class="style2">
                 <asp:TextBox ID="TextBxUsername" runat="server"></asp:TextBox>
             </td>
@@ -90,8 +49,7 @@
                     style="font-size: medium; " 
                     Text="Email ID"></asp:Label>
             </td>
-        </tr>
-        <tr>
+        
             <td class="style2">
                 <asp:TextBox ID="TxtEid" runat="server" Width="126px"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
@@ -107,15 +65,13 @@
                 <asp:Label ID="Label10" runat="server" ForeColor="#999999" 
                     style="font-style: italic" Text="(6 to 15 charecter)"></asp:Label>
             </td>
-        </tr>
-        <tr>
+        
             <td class="style4">
                 <asp:TextBox ID="TxtBxpswd" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="TxtBxpswd" ErrorMessage="Enter password" 
                     style="font-style: italic"></asp:RequiredFieldValidator>
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                     ControlToValidate="TxtBxpswd" 
                     ErrorMessage="(Character must be between 6 and 15)" style="font-style: italic" 
@@ -129,8 +85,7 @@
                     style="font-size: medium; " 
                     Text="Re-Enter"></asp:Label>
             </td>
-        </tr>
-        <tr>
+        
             <td class="style2">
                 <asp:TextBox ID="TextBxrenter" runat="server" TextMode="Password" 
                     ontextchanged="TextBxrenter_TextChanged"></asp:TextBox>
@@ -145,12 +100,11 @@
                     style="font-size: medium; " 
                     Text="Date Of Birth"></asp:Label>
             </td>
-        </tr>
-        <tr>
+       
             <td class="style2">
                 <asp:Label ID="Label7" runat="server" 
                     style="font-size: medium;" Text="Date         "></asp:Label>
-                <asp:DropDownList ID="Ddldate" runat="server" Height="16px" Width="45px">
+                <asp:DropDownList ID="Ddldate" runat="server" >
                     <asp:ListItem Value="1"></asp:ListItem>
                     <asp:ListItem Value="2"></asp:ListItem>
                     <asp:ListItem Value="3"></asp:ListItem>
@@ -159,7 +113,7 @@
 &nbsp;
                 <asp:Label ID="Label8" runat="server" 
                     style="font-size: medium;" Text="Month"></asp:Label>
-&nbsp;<asp:DropDownList ID="Ddlmnth" runat="server" Height="18px" Width="55px">
+&nbsp;<asp:DropDownList ID="Ddlmnth" runat="server">
                     <asp:ListItem Value="jan"></asp:ListItem>
                     <asp:ListItem Value="feb"></asp:ListItem>
                     <asp:ListItem></asp:ListItem>
@@ -178,10 +132,8 @@
         </tr>
         <tr>
             <td class="style2">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                &nbsp;</td>
-        </tr>
-        <tr>
+                </td>
+        
             <td class="style2">
                 <asp:Button ID="Btregister" runat="server" Font-Bold="True" Height="22px" Text="Register" 
                     Width="96px" onclick="Btregister_Click" />
@@ -190,8 +142,7 @@
             </td>
         </tr>
     </table>
-</form>
+
 <p>
     &nbsp;</p>
-</body>
-</html>
+</asp:Content>

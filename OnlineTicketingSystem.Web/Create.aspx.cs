@@ -44,7 +44,7 @@ namespace OnlineTicketSystem.Web
             user.Password = TxtBxpswd.Text;
             user.DateOfBirth = Ddldate.SelectedItem.Text + "/" + Ddlmnth.SelectedItem.Text + "/" + Ddlyr.SelectedItem.Text;
 
-            _dbContext.InsertUser(user);
+            bool returnVal = _dbContext.InsertUser(user);
             //string str = "insert into UserReg values('" + TxtbxFirst.Text + "','" + TxtBxLast.Text + "','" + TextBxUsername.Text + "','" + TxtEid.Text + "','" + TxtBxpswd.Text + "','" + dob + "')";
             //SqlCommand cmd = new SqlCommand(str, con);
             //con.Open();
@@ -52,7 +52,14 @@ namespace OnlineTicketSystem.Web
             ////  Response.Write(""+str);
             //Label11.Text = "Registered successfully";
             //con.Close();
-            Label11.Text = "Registered successfully";
+            if (returnVal)
+            {
+                Label11.Text = "Registered successfully";
+            }
+            else
+            {
+                Label11.Text = "Registration Failed";
+            }
         }
         protected void TextBxrenter_TextChanged(object sender, EventArgs e)
         {
