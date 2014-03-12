@@ -37,9 +37,9 @@ namespace OnlineTicketSystem.Web.Database
         {
             SqlDataReader reader = null;
             User user = null;
-            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetUser", new SqlParameter[] { 
-                new SqlParameter("@UserName", userId), 
-                new SqlParameter("@Password", password)});
+            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetUser",  
+                new SqlParameter("@UserName", SqlDbType.VarChar).Value = userId, 
+                new SqlParameter("@Password", SqlDbType.VarChar).Value = password);
             while (reader.Read())
             {
                 user = new User();
@@ -50,6 +50,8 @@ namespace OnlineTicketSystem.Web.Database
                 user.UserName = DBNull.Value == reader["UserName"] ? string.Empty : reader["UserName"].ToString();
                 user.DateOfBirth = DBNull.Value == reader["DateOfBirth"] ? string.Empty : reader["DateOfBirth"].ToString();
             }
+            reader.Close();
+            reader.Dispose();
             //string str = "insert into UserReg values('" + user.FirstName + "','" + user.LastName + "','" + user.UserName + "','" + user.EmailId + "','" + user.Password + "','" + user.DateOfBirth + "')";
             //SqlCommand cmd = new SqlCommand(str, con);
             //con.Open();
@@ -58,6 +60,15 @@ namespace OnlineTicketSystem.Web.Database
 
             //con.Close();
             return user;
+        }
+
+        public bool InsertUserLog(int userKey, string sessionId)
+        {
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertUserLog",
+                new SqlParameter("@UserName", SqlDbType.Int).Value = userKey,
+                new SqlParameter("@SessionId", SqlDbType.VarChar).Value = sessionId,
+                new SqlParameter("@LoginDate", SqlDbType.VarChar).Value = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
+            return ret > 0;
         }
 
         public void RegisterTheater(Theater theater)

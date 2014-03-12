@@ -1,12 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="OnlineTicketSystem.Web.Web" %>
 
+<%@ Register src="UserControls/UserStatusCtrl.ascx" tagname="UserStatusCtrl" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Online Ticketing System</title>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-    <link rel="Stylesheet" href="~\Content\Styles\Site.css" />
+    <link rel="Stylesheet" href="~/Content/Styles/Site.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
@@ -53,11 +55,13 @@
 		    <li><a href="Enews.aspx">Entertainment News!</a></li>
 		    <li><a href="latestmovie.aspx">Latest Movies</a></li>
 		    <li><a href="filmRev.aspx">Film Reviews</a></li>
-		    <li><a href="Login.aspx">Login</a></li>
 	    </ul>
     </nav>
     <form id="form1" runat="server">
     <div>
+        <uc1:UserStatusCtrl ID="UserStatusCtrl1" runat="server" />
+    </div>
+    <div style="text-align:center;">
         <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>

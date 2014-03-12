@@ -19,7 +19,7 @@ namespace OnlineTicketSystem.Web
 {
     public partial class Create : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"server=.\;database=onlineticket;uid=sa;pwd=");
+        
         public DatabaseContext _dbContext = new DatabaseContext();
         
         protected void Page_Load(object sender, EventArgs e)

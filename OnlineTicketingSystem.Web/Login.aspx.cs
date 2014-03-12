@@ -12,14 +12,14 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Data.SqlClient;
 
+using OnlineTicketSystem.Web.Models;
+using OnlineTicketSystem.Web.Database;
+
 namespace OnlineTicketSystem.Web
 {
     public partial class _Login : System.Web.UI.Page
     {
-        SqlDataReader rd;
-
-        SqlConnection con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=onlineticket;Trusted_Connection=True;Integrated Security=SSPI");
-        SqlConnection con1 = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=onlineticket;Trusted_Connection=True;Integrated Security=SSPI");
+        public DatabaseContext _dbContext = new DatabaseContext();
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,41 +35,49 @@ namespace OnlineTicketSystem.Web
         }
         protected void Btnsign_Click(object sender, EventArgs e)
         {
-
-
-
-
-            String str = "select count(Username )from UserLogin where Username='" + txtbxusr.Text + "'and Password='" + Txtbxpswd.Text + "'";
-
-            SqlCommand cmd = new SqlCommand(str, con);
-            con.Open();
-            rd = cmd.ExecuteReader();
-            if (rd.Read())
+            User user = _dbContext.GetUser(txtbxusr.Text, Txtbxpswd.Text);
+            if (user != null)
             {
-                int count = Convert.ToInt32(rd[0]);
-                if (count == 1)
-                {
-                    Session["uid"] = txtbxusr.Text;
-                    string login_dt = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
-                    Response.Write(login_dt);
-                    string logout_dt = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
-                    Response.Write(logout_dt);
-                    string log = "insert into UserDisp(Eid,LoginTime,LogoutTime) values('" + txtbxusr.Text + "','" + login_dt + "','" + logout_dt + "')";
-
-                    // String str = "select count(Username )from UserLogin where Username='" + txtbxusr.Text + "'and Password='" + Txtbxpswd.Text + "'";
-                    SqlCommand cmd1 = new SqlCommand(log, con1);
-                    con1.Open();
-                    cmd1.ExecuteNonQuery();
-                    con1.Close();
-                    Response.Redirect("UserHome.aspx");
-
-                }
-                else
-                {
-                    label1.Text = "Invalid Username or Password !";
-                }
+                Session["uid"] = user.UserName;
+                _dbContext.InsertUserLog(user.UserKey, HttpContext.Current.Session.SessionID);
+                Response.Redirect("UserHome.aspx");
             }
-            con.Close();
+            else
+            {
+                label1.Text = "Invalid Username or Password !";
+            }
+
+            //String str = "select count(Username )from UserLogin where Username='" + txtbxusr.Text + "'and Password='" + Txtbxpswd.Text + "'";
+
+            //SqlCommand cmd = new SqlCommand(str, con);
+            //con.Open();
+            //rd = cmd.ExecuteReader();
+            //if (rd.Read())
+            //{
+            //    int count = Convert.ToInt32(rd[0]);
+            //    if (count == 1)
+            //    {
+            //        Session["uid"] = txtbxusr.Text;
+            //        string login_dt = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+            //        Response.Write(login_dt);
+            //        string logout_dt = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+            //        Response.Write(logout_dt);
+            //        string log = "insert into UserDisp(Eid,LoginTime,LogoutTime) values('" + txtbxusr.Text + "','" + login_dt + "','" + logout_dt + "')";
+
+            //        // String str = "select count(Username )from UserLogin where Username='" + txtbxusr.Text + "'and Password='" + Txtbxpswd.Text + "'";
+            //        SqlCommand cmd1 = new SqlCommand(log, con1);
+            //        con1.Open();
+            //        cmd1.ExecuteNonQuery();
+            //        con1.Close();
+            //        Response.Redirect("UserHome.aspx");
+
+            //    }
+            //    else
+            //    {
+            //        label1.Text = "Invalid Username or Password !";
+            //    }
+            //}
+            //con.Close();
         }
         protected void Button1_Click(object sender, EventArgs e)
         {

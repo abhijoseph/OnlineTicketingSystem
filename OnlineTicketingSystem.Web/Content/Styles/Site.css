@@ -19,10 +19,17 @@ border-bottom: solid 1px rgb(207, 184, 184);
 #header>div{
     padding:10px;
 }
+
+#status-control {
+    text-align: right;
+    padding: 5px 100px 5px 0px;
+    color: rgb(126, 123, 123);
+}
 table {
     background-color: rgb(252, 252, 252);
     border-radius: 10px;
     padding: 10px;
+    display: inline-block;
 }
 
 nav {
@@ -34,7 +41,6 @@ nav {
 	display: block;
 	margin: 8px 22px 8px 22px;
 	overflow: hidden;
-	width: 90%; 
 }
 
 nav ul {
@@ -56,7 +62,7 @@ nav ul {
 		nav > ul > li > a {
 			color: #aaa;
 			display: block;
-			line-height: 56px;
+			line-height: 36px;
 			padding: 0 24px;
 			text-decoration: none;
 		}

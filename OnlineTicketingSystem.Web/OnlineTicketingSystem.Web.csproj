@@ -163,6 +163,13 @@
     <Compile Include="Update.aspx.designer.cs">
       <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserStatusCtrl.ascx.cs">
+      <DependentUpon>UserStatusCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserStatusCtrl.ascx.designer.cs">
+      <DependentUpon>UserStatusCtrl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Userdisp.aspx.cs">
       <DependentUpon>Userdisp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="theaterId\345jpg" />
+    <Content Include="UserControls\UserStatusCtrl.ascx" />
     <Content Include="Web.Master" />
   </ItemGroup>
   <ItemGroup>

@@ -8,45 +8,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineTicketSystem.Web {
+namespace OnlineTicketSystem.Web.UserControls {
     
     
-    public partial class Web {
+    public partial class UserStatusCtrl {
         
         /// <summary>
-        /// head control.
+        /// divLoggedIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLoggedIn;
         
         /// <summary>
-        /// form1 control.
+        /// lblUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblUserName;
         
         /// <summary>
-        /// UserStatusCtrl1 control.
+        /// linkLogout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::OnlineTicketSystem.Web.UserControls.UserStatusCtrl UserStatusCtrl1;
+        protected global::System.Web.UI.WebControls.LinkButton linkLogout;
         
         /// <summary>
-        /// mainContentPlaceHolder control.
+        /// divLoggedOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainContentPlaceHolder;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLoggedOut;
     }
 }
