@@ -44,7 +44,7 @@ namespace OnlineTicketSystem.Web
             Theater theater = new Theater();
             theater.TheaterName = Txtbxthetrnm.Text;
             theater.TheaterCode = Txtbxthetrcd.Text;
-           theater.TheaterCode = txtusername.Text;
+            theater.TheaterCode = txtusername.Text;
             theater.Password = Txtthtrpd.Text;
             theater.EmailId = TxtthtrEml.Text;
             theater.City = Ddlcity.SelectedItem.Text;

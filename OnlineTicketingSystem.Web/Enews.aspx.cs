@@ -10,14 +10,21 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using System.Collections.Generic;
+using OnlineTicketSystem.Web.Models;
+using OnlineTicketSystem.Web.Database;
 
 namespace OnlineTicketSystem.Web
 {
     public partial class Enews : System.Web.UI.Page
     {
+        public DatabaseContext _dbContext = new DatabaseContext();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            List<EntertainmentNewsInfo> enewsList = _dbContext.GetEntertainmentNews();
+            eNewsRepeater.DataSource = enewsList;
+            eNewsRepeater.DataBind();
         }
     }
 }

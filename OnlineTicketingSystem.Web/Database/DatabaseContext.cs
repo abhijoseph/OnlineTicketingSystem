@@ -81,6 +81,40 @@ namespace OnlineTicketSystem.Web.Database
 
         }
 
+        #region ENews Functions
+        public List<EntertainmentNewsInfo> GetEntertainmentNews()
+        {
+            List<EntertainmentNewsInfo> entertainmentNewsList = new List<EntertainmentNewsInfo>();
+            SqlDataReader reader = null;
+            //User user = null;
+            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetEntertainmentNews");
+            while (reader.Read())
+            {
+                EntertainmentNewsInfo newsInfo = new EntertainmentNewsInfo();
+                newsInfo.Heading = DBNull.Value == reader["Heading"] ? string.Empty : reader["Heading"].ToString();
+                newsInfo.Description = DBNull.Value == reader["Description"] ? string.Empty : reader["Description"].ToString();
+                newsInfo.PostedOn = DBNull.Value == reader["PostedOn"] ? string.Empty : reader["PostedOn"].ToString();
+                newsInfo.PostedBy = DBNull.Value == reader["PostedBy"] ? string.Empty : reader["PostedBy"].ToString();
+                //user.UserName = DBNull.Value == reader["UserName"] ? string.Empty : reader["UserName"].ToString();
+                //user.DateOfBirth = DBNull.Value == reader["DateOfBirth"] ? string.Empty : reader["DateOfBirth"].ToString();
+                entertainmentNewsList.Add(newsInfo);
+            }
+            reader.Close();
+            reader.Dispose();
+            return entertainmentNewsList;
+        }
+        public bool InsertEntertainmentNews(EntertainmentNewsInfo enewsInfo)
+        {
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "[dbo].[usp_InsertEntertainmentNews]",
+                new SqlParameter("@Heading", SqlDbType.VarChar).Value = enewsInfo.Heading,
+                new SqlParameter("@Description", SqlDbType.VarChar).Value = enewsInfo.Description,
+                new SqlParameter("@PostedOn", SqlDbType.DateTime).Value = enewsInfo.PostedOn,
+                new SqlParameter("@PostedBy", SqlDbType.VarChar).Value = enewsInfo.PostedBy);
+               
+            return ret > 0;
+        }
+        #endregion
+
 
     }
 }

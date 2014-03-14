@@ -1,55 +1,33 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Enews" Codebehind="Enews.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Enews" MasterPageFile="~/Web.master" Codebehind="Enews.aspx.cs" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
+  
+    <asp:Repeater ID="eNewsRepeater" runat="server">
+        <HeaderTemplate>
+            <table style=" border:1px solid #df5015; width:500px" cellpadding="0">
+            <tr style="background-color:#df5015; color:White">
+            <td colspan="2">
+            <b>News</b>
+            </td>
+            </tr>
+            </HeaderTemplate>
+            <ItemTemplate>
+            
+            <tr>
+            <td>
+            <asp:Label ID="lblNewsHeading" runat="server" Text='<%#Eval("Heading") %>'/>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <asp:Label ID="LblNewsDescription" runat="server" Text='<%#Eval("Description") %>'/>
+            </td>
+            </tr>
+          
+            
+            </ItemTemplate>
+            <FooterTemplate>
+            </table>
+            </FooterTemplate>
+    </asp:Repeater>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <table class="style1">
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-        </table>
-    
-    </div>
-    </form>
-</body>
-</html>
+</asp:Content>

@@ -124,6 +124,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\EntertainmentNewsInfo.cs" />
     <Compile Include="Models\MovieInfo.cs" />
     <Compile Include="Models\theater.cs" />
     <Compile Include="Models\User.cs" />
