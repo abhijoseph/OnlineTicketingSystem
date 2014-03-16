@@ -11,132 +11,132 @@
 namespace OnlineTicketSystem.Web {
     
     
-    public partial class Theaterpg {
+    public partial class InsertEnews {
         
         /// <summary>
-        /// form1 control.
+        /// LblHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label LblHeading;
         
         /// <summary>
-        /// LblMovie control.
+        /// TextHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMovie;
+        protected global::System.Web.UI.WebControls.TextBox TextHeading;
         
         /// <summary>
-        /// TextMovie control.
+        /// RFVHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextMovie;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVHeading;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// LblDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label LblDescription;
         
         /// <summary>
-        /// LblDetails control.
+        /// TextDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDetails;
+        protected global::System.Web.UI.WebControls.TextBox TextDescription;
         
         /// <summary>
-        /// TextDetails control.
+        /// RFVDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDetails;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDescription;
         
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// LblPostedOn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.Label LblPostedOn;
         
         /// <summary>
-        /// LblImage control.
+        /// TextPostedOn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblImage;
+        protected global::System.Web.UI.WebControls.TextBox TextPostedOn;
         
         /// <summary>
-        /// ImageImg control.
+        /// RFVPostedOn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImageImg;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPostedOn;
         
         /// <summary>
-        /// LinkButton1 control.
+        /// LblPostedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.Label LblPostedBy;
         
         /// <summary>
-        /// Lbl control.
+        /// TextPostedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl;
+        protected global::System.Web.UI.WebControls.TextBox TextPostedBy;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// RFVPostedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPostedBy;
         
         /// <summary>
-        /// Button1 control.
+        /// ButtonSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
         
         /// <summary>
-        /// Label1 control.
+        /// Lblstatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Lblstatus;
     }
 }

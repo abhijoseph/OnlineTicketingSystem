@@ -11,7 +11,7 @@
 namespace OnlineTicketSystem.Web {
     
     
-    public partial class Create {
+    public partial class EditUser {
         
         /// <summary>
         /// LblFirst control.
@@ -257,13 +257,13 @@ namespace OnlineTicketSystem.Web {
         protected global::System.Web.UI.WebControls.DropDownList ddlRoles;
         
         /// <summary>
-        /// Btregister control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btregister;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
         /// Label11 control.

@@ -30,6 +30,8 @@ table {
     border-radius: 10px;
     padding: 10px;
     display: inline-block;
+    height: 22px;
+    width: 58%;
 }
 
 nav {
@@ -94,3 +96,13 @@ nav > ul > li:hover {
         nav > ul > li:hover > a > .caret {
           border-top-color: rgb( 255, 255, 255 );
         }
+.news-description 
+{
+    background-color: rgb(226, 223, 223);
+    padding: 30px;
+}
+.news-heading
+{
+    font-size: 24px;
+    text-align: left;
+}

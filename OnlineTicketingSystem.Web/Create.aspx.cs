@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -24,16 +24,13 @@ namespace OnlineTicketSystem.Web
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            //List<UserRole> userRoles = _dbContext.GetUserRoles();
+            //ddlRoles.DataSource = userRoles;
+            //ddlRoles.DataTextField = "RoleName";
+            //ddlRoles.DataValueField = "RoleId";
 
         }
-        protected void TextBox4_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-        protected void TxtbxFirst_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         protected void Btregister_Click(object sender, EventArgs e)
         {
             User user = new User();
@@ -61,9 +58,6 @@ namespace OnlineTicketSystem.Web
                 Label11.Text = "Registration Failed";
             }
         }
-        protected void TextBxrenter_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

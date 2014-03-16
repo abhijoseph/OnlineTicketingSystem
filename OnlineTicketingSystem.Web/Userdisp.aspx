@@ -78,18 +78,18 @@
         <tr>
             <td class="style5">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-                    DataKeyNames="Eid" DataSourceID="SqlDataSource1" Height="246px" 
+                    DataKeyNames="Emailid" DataSourceID="SqlDataSource1" Height="246px" 
                     style="margin-top: 7px; margin-bottom: 2px" Width="359px">
                     <Columns>
                         <asp:BoundField DataField="Firstname" HeaderText="Firstname" 
                             SortExpression="Firstname" />
-                        <asp:BoundField DataField="Eid" HeaderText="Eid" ReadOnly="True" 
-                            SortExpression="Eid" />
+                        <asp:BoundField DataField="Emailid" HeaderText="Emailid" ReadOnly="True" 
+                            SortExpression="Emailid" />
                     </Columns>
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:onlineticketConnectionString %>" 
-                    SelectCommand="SELECT [Firstname], [Eid] FROM [UserReg]">
+                    SelectCommand="SELECT [Firstname], [Emailid] FROM [UserReg]">
                 </asp:SqlDataSource>
             </td>
             <td class="style8">
@@ -104,7 +104,7 @@
                     </Columns>
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:onlineticketConnectionString2 %>" 
+                    ConnectionString="<%$ ConnectionStrings:onlineticketConnectionString %>" 
                     onselecting="SqlDataSource2_Selecting" 
                     SelectCommand="SELECT [TheaterName], [TheaterCode] FROM [register]">
                 </asp:SqlDataSource>

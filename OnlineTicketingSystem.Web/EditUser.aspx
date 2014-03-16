@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Create" MasterPageFile="~/Web.master" Codebehind="Create.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" MasterPageFile="~/Web.master" Inherits="OnlineTicketSystem.Web.EditUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     
     <table class="style1">
         <caption class="style3">
-            Registration</caption>
+            Edit User</caption>
 
         <tr>
             <td class="style2" >
@@ -86,7 +86,8 @@
             </td>
         
             <td class="style2">
-                <asp:TextBox ID="TextBxrenter" runat="server" TextMode="Password" ></asp:TextBox>
+                <asp:TextBox ID="TextBxrenter" runat="server" TextMode="Password" 
+                    ></asp:TextBox>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" 
                     ControlToCompare="TxtBxpswd" ControlToValidate="TextBxrenter" 
                     ErrorMessage="Not Matching" style="font-style: italic"></asp:CompareValidator>
@@ -142,8 +143,8 @@
                 </td>
         
             <td class="style2">
-                <asp:Button ID="Btregister" runat="server" Font-Bold="True" Height="22px" Text="Register" 
-                    Width="96px" onclick="Btregister_Click"/>
+                <asp:Button ID="btnUpdate" runat="server" Font-Bold="True" Height="22px" Text="Register" 
+                    Width="96px"  onclick="btnUpdate_Click"/>
                 <asp:Label ID="Label11" runat="server" ForeColor="#009900" 
                     style="font-style: italic; font-weight: 700"></asp:Label>
             </td>

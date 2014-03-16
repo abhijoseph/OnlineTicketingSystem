@@ -30,7 +30,7 @@ namespace OnlineTicketSystem.Web
         }
         protected void btlatestmovies_Click(object sender, EventArgs e)
         {
-            Response.Redirect("latestmovie.aspx");
+            Response.Redirect("GetLatestMovies.aspx");
         }
         protected void btfilmreviews_Click(object sender, EventArgs e)
         {

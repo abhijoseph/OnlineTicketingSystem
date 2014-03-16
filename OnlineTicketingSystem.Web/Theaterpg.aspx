@@ -46,12 +46,12 @@
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="lblmovie" runat="server" Text="Enter Movie"></asp:Label>
+                <asp:Label ID="LblMovie" runat="server" Text="Enter Movie"></asp:Label>
             </td>
             <td class="style3">
-                <asp:TextBox ID="txtbxname" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextMovie" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                    ErrorMessage="Enter Movie Name"></asp:RequiredFieldValidator>
+                    ErrorMessage="Enter Movie Name" ControlToValidate="TextMovie"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -62,12 +62,13 @@
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="lbldetails" runat="server" Text="Movie Details"></asp:Label>
+                <asp:Label ID="LblDetails" runat="server" Text="Movie Details"></asp:Label>
             </td>
             <td class="style3">
-                <asp:TextBox ID="txtbxdetails" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextDetails" runat="server" 
+                    ontextchanged="txtbxdetails_TextChanged"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                    ErrorMessage="Enter Movie Details"></asp:RequiredFieldValidator>
+                    ErrorMessage="Enter Movie Details" ControlToValidate="TextDetails"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -78,17 +79,20 @@
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="lblimage" runat="server">Movie Still</asp:Label>
+                <asp:Label ID="LblImage" runat="server">Movie Still</asp:Label>
             </td>
             <td class="style3">
-                <asp:Image ID="Image1" runat="server" Height="229px" Width="242px" />
+                <asp:Image ID="ImageImg" runat="server" Height="229px" Width="242px" />
+                <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Upload</asp:LinkButton>
+                <asp:Label ID="Lbl" runat="server" ForeColor="#33CC33" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="style2">
                 &nbsp;</td>
             <td class="style3">
-                &nbsp;</td>
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+            </td>
         </tr>
         <tr>
             <td class="style2">
@@ -102,6 +106,7 @@
             <td class="style3">
                 <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 
                     style="height: 26px" Text="Submit" />
+                <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>

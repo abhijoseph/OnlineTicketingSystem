@@ -52,13 +52,27 @@ namespace OnlineTicketSystem.Web.Database
             }
             reader.Close();
             reader.Dispose();
-            //string str = "insert into UserReg values('" + user.FirstName + "','" + user.LastName + "','" + user.UserName + "','" + user.EmailId + "','" + user.Password + "','" + user.DateOfBirth + "')";
-            //SqlCommand cmd = new SqlCommand(str, con);
-            //con.Open();
-            //cmd.ExecuteNonQuery();
-            ////  Response.Write(""+str);
+            return user;
+        }
 
-            //con.Close();
+        public User GetUserById(int userId)
+        {
+            SqlDataReader reader = null;
+            User user = null;
+            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetUserById",
+                new SqlParameter("@UserName", SqlDbType.VarChar).Value = userId);
+            while (reader.Read())
+            {
+                user = new User();
+                user.FirstName = DBNull.Value == reader["FirstName"] ? string.Empty : reader["FirstName"].ToString();
+                user.LastName = DBNull.Value == reader["LastName"] ? string.Empty : reader["LastName"].ToString();
+                user.EmailId = DBNull.Value == reader["EmailId"] ? string.Empty : reader["EmailId"].ToString();
+                user.Password = DBNull.Value == reader["Password"] ? string.Empty : reader["Password"].ToString();
+                user.UserName = DBNull.Value == reader["UserName"] ? string.Empty : reader["UserName"].ToString();
+                user.DateOfBirth = DBNull.Value == reader["DateOfBirth"] ? string.Empty : reader["DateOfBirth"].ToString();
+            }
+            reader.Close();
+            reader.Dispose();
             return user;
         }
 
@@ -76,7 +90,7 @@ namespace OnlineTicketSystem.Web.Database
             String str = "insert into Register values('" + theater.TheaterName + "','" + theater.TheaterCode + "','" + theater.TheaterCode + "','" + theater.Password + "','" + theater.EmailId + "','" + theater.City + "','" + theater.Location + "','" + theater.SeatingCapacity + "')";
             SqlCommand cmd = new SqlCommand(str, _sqlConnection);
             _sqlConnection.Open();
-            cmd.ExecuteNonQuery();
+           // cmd.ExecuteNonQuery();
             _sqlConnection.Close();
 
         }
@@ -105,7 +119,7 @@ namespace OnlineTicketSystem.Web.Database
         }
         public bool InsertEntertainmentNews(EntertainmentNewsInfo enewsInfo)
         {
-            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "[dbo].[usp_InsertEntertainmentNews]",
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertEntertainmentNews",
                 new SqlParameter("@Heading", SqlDbType.VarChar).Value = enewsInfo.Heading,
                 new SqlParameter("@Description", SqlDbType.VarChar).Value = enewsInfo.Description,
                 new SqlParameter("@PostedOn", SqlDbType.DateTime).Value = enewsInfo.PostedOn,
@@ -115,6 +129,47 @@ namespace OnlineTicketSystem.Web.Database
         }
         #endregion
 
-
+        public bool InsertLatestMovies(LatestMovies movies)
+        {
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertLatestMovies",
+                new SqlParameter("@MovieName", SqlDbType.VarChar).Value = movies.MovieName,
+                new SqlParameter("@Language", SqlDbType.VarChar).Value = movies.Language,
+                new SqlParameter("@Director", SqlDbType.DateTime).Value = movies.Director,
+                new SqlParameter("@Actor", SqlDbType.VarChar).Value = movies.Actor,
+                new SqlParameter("@Actress", SqlDbType.VarChar).Value = movies.Actress);
+            return ret > 0;
+        }
+        public List<LatestMovies> GetLatestMovies()
+        {
+            List<LatestMovies> LatestMoviesList = new List<LatestMovies>();
+            SqlDataReader reader = null;
+            //User user = null;
+            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetLatestMovies");
+            while (reader.Read())
+            {
+                LatestMovies movies = new LatestMovies();
+                movies.MovieName = DBNull.Value == reader["MovieName"] ? string.Empty : reader["MovieName"].ToString();
+                movies.Language = DBNull.Value == reader["Language"] ? string.Empty : reader["Language"].ToString();
+                movies.Director = DBNull.Value == reader["Director"] ? string.Empty : reader["Director"].ToString();
+                movies.Actor = DBNull.Value == reader["Actor"] ? string.Empty : reader["Actor"].ToString();
+                movies.Actress = DBNull.Value == reader["Actress"] ? string.Empty : reader["Actress"].ToString();
+                //user.DateOfBirth = DBNull.Value == reader["DateOfBirth"] ? string.Empty : reader["DateOfBirth"].ToString();
+                LatestMoviesList.Add(movies);
+            }
+            reader.Close();
+            reader.Dispose();
+            return LatestMoviesList;
+     
+       }
+        public bool InsertFilmReview(FilmReview review)
+        {
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertFilmReview",
+                new SqlParameter("@MovieName", SqlDbType.VarChar).Value = review.MovieName,
+                new SqlParameter("@Review", SqlDbType.VarChar).Value = review.Review);
+               // new SqlParameter("@UserName", SqlDbType.VarChar).Value = user.UserName,
+                //new SqlParameter("@Password", SqlDbType.VarChar).Value = user.Password,
+                //new SqlParameter("@EmailId", SqlDbType.VarChar).Value = user.EmailId);
+            return ret > 0;
+        }
     }
 }
