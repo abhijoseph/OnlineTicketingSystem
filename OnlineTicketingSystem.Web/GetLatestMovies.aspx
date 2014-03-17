@@ -5,10 +5,10 @@
     <asp:Repeater ID="eNewsRepeater" runat="server" 
         >
         <HeaderTemplate>
-            <table  style=" border:1px solid #df5015; ">
-            <tr style="background-color:#df5015; color:White">
+            <table >
+            <tr style="background-color:Silver; color:White; margin:5px">
                 <td colspan="5">
-                    <b>Latest Movies</b>
+                    <span>Latest Movies</span>
                 </td>
             </tr>
             </HeaderTemplate>
@@ -16,7 +16,7 @@
             <ItemTemplate>
 
             
-            <tr>
+            <tr class="news-heading">
                 <th rowspan="2">
                     <asp:Label ID="lblMovieName" runat="server" Text='<%#Eval("MovieName") %>'/>
                 </th>

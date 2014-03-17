@@ -27,7 +27,8 @@
 	    <ul>
 		    <li><a href="UserHome.aspx">Home</a></li>
 		    <li><a href="Enews.aspx">Entertainment News!</a></li>
-		    <li><a href="latestmovie.aspx">Latest Movies</a></li>
+		    <li><a href="GetLatestMovies.aspx">Latest Movies</a></li>
+		    <%--latestmovie.aspx--%>
 		    <li><a href="filmRev.aspx">Film Reviews</a></li>
 	    </ul>
     </nav>
