@@ -166,6 +166,13 @@
     <Compile Include="Models\MovieInfo.cs" />
     <Compile Include="Models\theater.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyAccount.aspx.designer.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Passwrd.aspx.cs">
       <DependentUpon>Passwrd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,8 +250,10 @@
     <Content Include="AdminHome.aspx" />
     <Content Include="EditUser.aspx" />
     <Content Include="GetLatestMovies.aspx" />
+    <Content Include="Images\buy-movie-tickets.jpg" />
     <Content Include="InsertEnews.aspx" />
     <Content Include="InsertFilmReview.aspx" />
+    <Content Include="MyAccount.aspx" />
     <Content Include="TheaterHomePage.aspx" />
     <Content Include="UserControls\UserStatusCtrl.ascx" />
     <Content Include="Web.Master" />

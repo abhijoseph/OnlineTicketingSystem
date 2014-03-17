@@ -1,6 +1,15 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.UserHome" MasterPageFile="~/Web.master" Codebehind="UserHome.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-    <table class="style1">
+    <div id="home-container">
+        <div id="home-container-img">
+            <img src="Images/buy-movie-tickets.jpg" alt="Online Ticket System" style="width: 700px;"/>
+        </div>
+        <div id="home-text">
+            Online Ticketing application, a website dedicated to providing film buffs the inside scoop on all things Entertainment. A global media powerhouse that helps viewers get the latest reviews on movies and Entertainment news and also provides option to movie viewers to get tickets booked online.
+        </div>
+    </div>
+
+    <%--<table class="style1">
         
         <tr>
             <td class="style2">
@@ -27,5 +36,5 @@
             </td>
         </tr>
         
-    </table>
+    </table>--%>
 </asp:Content>

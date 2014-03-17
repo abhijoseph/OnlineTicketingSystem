@@ -13,12 +13,16 @@ namespace OnlineTicketSystem.Web.UserControls
         {
             if (Session["uid"] != null)
             {
+                divMyaccount.Visible = true;
+                divAdmin.Visible = true;
                 divLoggedIn.Visible = true;
                 divLoggedOut.Visible = false;
                 lblUserName.Text = Convert.ToString(Session["uid"]);
             }
             else
             {
+                divMyaccount.Visible = false;
+                divAdmin.Visible = false;
                 divLoggedIn.Visible = false;
                 divLoggedOut.Visible = true;
             }

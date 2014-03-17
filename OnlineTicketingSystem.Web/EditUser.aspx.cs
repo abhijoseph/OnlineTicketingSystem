@@ -16,9 +16,9 @@ namespace OnlineTicketSystem.Web
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            string userKey = Request.QueryString["userid"].ToString();
-            User user = _dbContext.GetUserById(userKey);
-            TxtbxFirst.Text = user.FirstName;
+            //string userKey = Request.QueryString["userid"].ToString();
+            //User user = _dbContext.GetUserById(Int32.Parse(userKey));
+            //TxtbxFirst.Text = user.FirstName;
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)

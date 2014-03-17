@@ -22,9 +22,12 @@ namespace OnlineTicketSystem.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<EntertainmentNewsInfo> enewsList = _dbContext.GetEntertainmentNews();
-            eNewsRepeater.DataSource = enewsList;
-            eNewsRepeater.DataBind();
+            if (!Page.IsPostBack)
+            {
+                List<EntertainmentNewsInfo> enewsList = _dbContext.GetEntertainmentNews();
+                eNewsRepeater.DataSource = enewsList;
+                eNewsRepeater.DataBind();
+            }
         }
     }
 }

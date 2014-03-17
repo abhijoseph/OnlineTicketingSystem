@@ -8,38 +8,12 @@
 <head runat="server">
     <title>Online Ticketing System</title>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <%--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">--%>
     <link rel="Stylesheet" href="~/Content/Styles/Site.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        .style1
-        {
-            width: 70%;
-        }
-        .style2
-        {
-            width: 200px;
-        }
-        .style3
-        {
-            font-size: 1.3em;
-            padding:5px;
-            
-        }
-        .style4
-        {
-            width: 715px;
-        }
-        .style5
-        {
-            width: 297px;
-            height: 22px;
-        }
-        .style6
-        {
-            width: 715px;
-            height: 22px;
-        }
+       
     </style>
 </head>
 <body>
@@ -57,15 +31,26 @@
 		    <li><a href="filmRev.aspx">Film Reviews</a></li>
 	    </ul>
     </nav>
+<%--    <div id="admin-ctrl">
+        <ul>
+            <li>Book Tickets</li>
+            <li>Write Movie Review</li>
+            <li>Add Movie Release</li>
+            <li>Edit User</li>
+            <li>Edit Theater</li>
+        </ul>
+    </div>--%>
+    
     <form id="form1" runat="server">
     <div>
         <uc1:UserStatusCtrl ID="UserStatusCtrl1" runat="server" />
     </div>
-    <div style="text-align:center;">
+    
+    <%--<div style="text-align:center;">--%>
         <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
+    <%--</div>--%>
     </form>
 </body>
 </html>

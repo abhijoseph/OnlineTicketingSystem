@@ -14,6 +14,24 @@ namespace OnlineTicketSystem.Web.UserControls {
     public partial class UserStatusCtrl {
         
         /// <summary>
+        /// divMyaccount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMyaccount;
+        
+        /// <summary>
+        /// divAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAdmin;
+        
+        /// <summary>
         /// divLoggedIn control.
         /// </summary>
         /// <remarks>

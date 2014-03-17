@@ -1,13 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Enews" MasterPageFile="~/Web.master" Codebehind="Enews.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-  
+  <div>
     <asp:Repeater ID="eNewsRepeater" runat="server" 
         >
         <HeaderTemplate>
-            <table  style=" border:1px solid #df5015; ">
-            <tr style="background-color:#df5015; color:White">
+            <table>
+            <tr style="background-color:Silver ; color:White; margin:5px">
                 <td colspan="2">
-                    <b>News</b>
+                    <span>Latest Entertainment News</span>
                 </td>
             </tr>
             </HeaderTemplate>
@@ -40,5 +40,5 @@
             </table>
             </FooterTemplate>
     </asp:Repeater>
-
+</div>
 </asp:Content>

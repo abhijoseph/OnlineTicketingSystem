@@ -1,14 +1,22 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Web.master" CodeBehind="AdminHome.aspx.cs" Inherits="OnlineTicketSystem.Web.AdminHome" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 
+<h3>Site Administration</h3>
+<div id="admin-ctrl">
+        <ul class="big-menu-list">
+            <li>Book Tickets</li>
+            <li>Write Movie Review</li>
+            <li>Add Movie Release</li>
+            <li>Edit User</li>
+            <li>Edit Theater</li>
+        </ul>
+    </div>
 
 
 
 
 
-
-
-    <table class="style7">
+    <%--<table class="style7">
         <tr>
             <td>
                 <ul>
@@ -63,7 +71,7 @@
             <td>
                 &nbsp;</td>
         </tr>
-    </table>
+    </table>--%>
 
 
 
@@ -71,15 +79,5 @@
 
 
 
-
-</asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
-
-    <style type="text/css">
-        .style7
-        {
-            width: 100%;
-        }
-    </style>
 
 </asp:Content>
