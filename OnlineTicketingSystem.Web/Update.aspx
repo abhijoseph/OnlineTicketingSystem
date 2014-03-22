@@ -1,36 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Update" Codebehind="Update.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Web.master" Inherits="OnlineTicketSystem.Web.Update" Codebehind="Update.aspx.cs" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            width: 229px;
-        }
-        .style3
-        {
-            width: 229px;
-            font-weight: bold;
-            font-size: medium;
-            color: #CC3300;
-        }
-        .style4
-        {
-            font-size: xx-large;
-            font-weight: bold;
-            color: #CC3300;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+
+
     <table class="style1">
         <tr>
             <td class="style3">
@@ -40,14 +13,7 @@
             <td>
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
+      
         <tr>
             <td class="style2">
                 &nbsp;</td>
@@ -73,14 +39,7 @@
             <td>
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
+        
         <tr>
             <td class="style2">
                 &nbsp;</td>
@@ -138,14 +97,7 @@
             <td>
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
+        
         <tr>
             <td class="style2">
                 &nbsp;</td>
@@ -157,9 +109,5 @@
                 &nbsp;</td>
         </tr>
     </table>
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+  
+</asp:Content>

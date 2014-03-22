@@ -39,6 +39,7 @@ namespace OnlineTicketSystem.Web
             if (user != null)
             {
                 Session["uid"] = user.UserName;
+                Session["Rolekey"]=user.RoleKey;
                 _dbContext.InsertUserLog(user.UserKey, HttpContext.Current.Session.SessionID);
                 Response.Redirect("UserHome.aspx");
             }

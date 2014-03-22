@@ -40,6 +40,7 @@ namespace OnlineTicketSystem.Web
             user.EmailId = TxtEid.Text;
             user.Password = TxtBxpswd.Text;
             user.DateOfBirth = Ddldate.SelectedItem.Text + "/" + Ddlmnth.SelectedItem.Text + "/" + Ddlyr.SelectedItem.Text;
+            user.RoleKey = 1;
 
             bool returnVal = _dbContext.InsertUser(user);
             //string str = "insert into UserReg values('" + TxtbxFirst.Text + "','" + TxtBxLast.Text + "','" + TextBxUsername.Text + "','" + TxtEid.Text + "','" + TxtBxpswd.Text + "','" + dob + "')";

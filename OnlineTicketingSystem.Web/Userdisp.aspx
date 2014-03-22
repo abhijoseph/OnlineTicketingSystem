@@ -1,80 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Userdisp" Codebehind="Userdisp.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Web.master" Inherits="OnlineTicketSystem.Web.Userdisp" Codebehind="Userdisp.aspx.cs" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            height: 16px;
-        }
-        .style3
-        {
-            height: 270px;
-        }
-        .style4
-        {
-            width: 411px;
-        }
-        .style5
-        {
-            height: 270px;
-            width: 411px;
-        }
-        .style6
-        {
-            height: 16px;
-            width: 411px;
-        }
-        .style7
-        {
-            width: 510px;
-        }
-        .style8
-        {
-            height: 270px;
-            width: 510px;
-        }
-        .style9
-        {
-            height: 16px;
-            width: 510px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+
+
     <table class="style1">
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
+       
         <tr>
             <td class="style5">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
@@ -112,95 +43,6 @@
             <td class="style3">
             </td>
         </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
-            </td>
-            <td class="style9">
-            </td>
-            <td class="style2">
-            </td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
+        
     </table>
-</form>
-</body>
-</html>
+</asp:Content>

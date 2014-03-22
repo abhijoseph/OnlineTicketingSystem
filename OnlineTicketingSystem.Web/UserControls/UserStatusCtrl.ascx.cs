@@ -26,6 +26,14 @@ namespace OnlineTicketSystem.Web.UserControls
                 divLoggedIn.Visible = false;
                 divLoggedOut.Visible = true;
             }
+            if (Convert.ToInt32(Session["Rolekey"]) == 2)
+            {
+                divAdmin.Visible = true;
+            }
+            else
+            {
+                divAdmin.Visible = false;
+            }
         }
 
         protected void linkLogout_Click(object sender, EventArgs e)

@@ -135,6 +135,12 @@
         
             <td class="style2">
                 <asp:DropDownList ID="ddlRoles" runat="server">
+                    <asp:ListItem Value="SelectRole"></asp:ListItem>
+                    <asp:ListItem Value="TheaterOwner"></asp:ListItem>
+                    <asp:ListItem Value="Admin"></asp:ListItem>
+                    <asp:ListItem Value="Defualt "></asp:ListItem>
+                    <asp:ListItem></asp:ListItem>
+                    <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>

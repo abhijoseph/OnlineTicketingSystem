@@ -7,7 +7,7 @@
         <a href= "EditUser.aspx">Edit Info</a>
     </li>
     <li>
-        <a href="Passwrd.aspx">Change Password</a>
+        <a href="Update.aspx">Change Password</a>
     </li>
 </ul>
 </asp:Content>

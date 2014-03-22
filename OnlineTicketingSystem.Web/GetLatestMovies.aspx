@@ -2,8 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
   
-    <asp:Repeater ID="eNewsRepeater" runat="server" 
-        >
+    <asp:Repeater ID="eNewsRepeater" runat="server" >
         <HeaderTemplate>
             <table >
             <tr style="background-color:Silver; color:White; margin:5px">

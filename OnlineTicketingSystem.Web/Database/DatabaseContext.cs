@@ -39,7 +39,7 @@ namespace OnlineTicketSystem.Web.Database
             User user = null;
             reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetUser",  
                 new SqlParameter("@UserName", SqlDbType.VarChar).Value = userId, 
-                new SqlParameter("@Password", SqlDbType.VarChar).Value = password);
+                new SqlParameter("@Password", SqlDbType.VarChar).Value =password);
             while (reader.Read())
             {
                 user = new User();
@@ -49,6 +49,8 @@ namespace OnlineTicketSystem.Web.Database
                 user.Password = DBNull.Value == reader["Password"] ? string.Empty : reader["Password"].ToString();
                 user.UserName = DBNull.Value == reader["UserName"] ? string.Empty : reader["UserName"].ToString();
                 user.DateOfBirth = DBNull.Value == reader["DateOfBirth"] ? string.Empty : reader["DateOfBirth"].ToString();
+                user.RoleKey = DBNull.Value == reader["RoleKey"] ? 1 : Convert.ToInt32(reader["RoleKey"].ToString());
+              
             }
             reader.Close();
             reader.Dispose();
