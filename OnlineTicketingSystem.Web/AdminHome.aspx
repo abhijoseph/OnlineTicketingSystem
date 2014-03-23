@@ -4,10 +4,9 @@
 <h3>Site Administration</h3>
 <div id="admin-ctrl">
         <ul class="big-menu-list">
-            <li> Book Tickets</li>
-            <li>
-            <a href= "InsertFilmReview.aspx">Write Movie Review</a></li>
-            <li>Add Movie Release</li>
+            <li><a href= "InsertFilmReview.aspx">Write Movie Review</a></li>
+            <li><a href="InsertEnews.aspx">Write E-News</a></li>
+            <li><a href="latestmovie.aspx">Add Latest Movies</a></li>
             <li><a href= "UserDisp.aspx">Edit User</a></li>
             <li>Edit Theater</li>
         </ul>

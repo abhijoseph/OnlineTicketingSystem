@@ -28,11 +28,16 @@ namespace OnlineTicketSystem.Web
         {
 
             FilmReview review = new FilmReview();
-            review.MovieName = TextMovieName.Text;
+            review.MovieName = DdlMovieName.SelectedItem.Text;
             review.Review = TextReview.Text;
            // review.PostedOn = TextPostedOn.Text;
             //enewsInfo.PostedBy = TextPostedBy.Text;
             bool returnVal = _dbContext.InsertFilmReview(review);
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

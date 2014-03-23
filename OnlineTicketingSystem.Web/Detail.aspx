@@ -62,12 +62,12 @@
                 SortExpression="LoginTime" />
             <asp:BoundField DataField="LogoutTime" HeaderText="LogoutTime" 
                 SortExpression="LogoutTime" />
-            <asp:BoundField DataField="Eid" HeaderText="Eid" SortExpression="Eid" />
+            <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="Eid" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:onlineticketConnectionString3 %>" 
-        SelectCommand="SELECT [LoginTime], [LogoutTime], [Eid] FROM [UserDisp]">
+        ConnectionString="<%$ ConnectionStrings:onlineticketConnectionString %>" 
+        SelectCommand="SELECT [LoginTime], [LogoutTime], [UserName] FROM [UserDisp]">
     </asp:SqlDataSource>
     </form>
 </body>

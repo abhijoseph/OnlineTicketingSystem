@@ -14,7 +14,7 @@ namespace OnlineTicketSystem.Web.UserControls
             if (Session["uid"] != null)
             {
                 divMyaccount.Visible = true;
-                divAdmin.Visible = true;
+                divAdmin.Visible = false;
                 divLoggedIn.Visible = true;
                 divLoggedOut.Visible = false;
                 lblUserName.Text = Convert.ToString(Session["uid"]);
@@ -29,10 +29,16 @@ namespace OnlineTicketSystem.Web.UserControls
             if (Convert.ToInt32(Session["Rolekey"]) == 2)
             {
                 divAdmin.Visible = true;
+                divAddMovie.Visible = false;
+            }
+            else if (Convert.ToInt32(Session["Rolekey"]) == 3)
+            {
+                divAdmin.Visible = false;
+                divAddMovie.Visible = true;
             }
             else
             {
-                divAdmin.Visible = false;
+                divAddMovie.Visible = false;
             }
         }
 

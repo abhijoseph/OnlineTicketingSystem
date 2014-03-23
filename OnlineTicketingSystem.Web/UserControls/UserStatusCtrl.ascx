@@ -7,6 +7,11 @@
         <li id="divAdmin" runat="server">
             <a href="/AdminHome.aspx">Site Administration</a>
         </li>
+        <li id="divAddMovie" runat="server">
+            <a href="/AdminHome.aspx">Add Movie</a>
+        </li>
+        
+        
         <li id="divLoggedIn" runat="server">
             <span>Welcome</span>
             <asp:Label ID="lblUserName" runat="server"></asp:Label>

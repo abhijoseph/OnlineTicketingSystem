@@ -9,5 +9,6 @@
     <li>
         <a href="Update.aspx">Change Password</a>
     </li>
+    <li>Book Ticket</li>
 </ul>
 </asp:Content>

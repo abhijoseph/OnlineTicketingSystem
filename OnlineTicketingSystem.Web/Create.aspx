@@ -130,16 +130,10 @@
         </tr>
         <tr>
             <td class="style2">
-                SelectRole</td>
+                &nbsp;</td>
         
             <td class="style2">
-                <asp:DropDownList ID="DdlRoleKey" runat="server">
-                    <asp:ListItem Value="1"></asp:ListItem>
-                    <asp:ListItem Value="2"></asp:ListItem>
-                    <asp:ListItem Value="3"></asp:ListItem>
-                    <asp:ListItem></asp:ListItem>
-                </asp:DropDownList>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
