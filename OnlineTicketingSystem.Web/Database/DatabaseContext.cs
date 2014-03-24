@@ -173,13 +173,13 @@ namespace OnlineTicketSystem.Web.Database
                 //new SqlParameter("@EmailId", SqlDbType.VarChar).Value = user.EmailId);
             return ret > 0;
         }
-        public FilmReview GetFilmReview()
+       public FilmReview GetFilmReview()
         {
-
-            SqlDataReader reader = null;
-            FilmReview review = null;
-            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetFilmReview");
-            while (reader.Read())
+        
+           SqlDataReader reader = null;
+           FilmReview review = null;
+           reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetFilmReview");
+           while (reader.Read())
             {
                 review = new FilmReview();
                 review.MovieName = DBNull.Value == reader["MovieName"] ? string.Empty : reader["MovieName"].ToString();
@@ -187,7 +187,7 @@ namespace OnlineTicketSystem.Web.Database
                 //movies.Director = DBNull.Value == reader["Director"] ? string.Empty : reader["Director"].ToString();
                 //movies.Actor = DBNull.Value == reader["Actor"] ? string.Empty : reader["Actor"].ToString();
                 //movies.Actress = DBNull.Value == reader["Actress"] ? string.Empty : reader["Actress"].ToString();
-
+                
 
             }
             reader.Close();

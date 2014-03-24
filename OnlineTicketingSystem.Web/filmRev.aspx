@@ -6,16 +6,21 @@
             <tr>
                 <td>
                     Select Movie&nbsp;&nbsp;&nbsp;
+                    
+                    
                     <asp:DropDownList ID="DdlMovie" runat="server" Height="17px" 
                         onselectedindexchanged="DropDownList1_SelectedIndexChanged" Width="123px">
                     </asp:DropDownList>
+                    
+                    
                 </td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
                 <td>
-                    Review<asp:TextBox ID="TextReview" runat="server"></asp:TextBox>
+                    Review<asp:TextBox ID="TextReview" runat="server" 
+                        ontextchanged="TextReview_TextChanged"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>

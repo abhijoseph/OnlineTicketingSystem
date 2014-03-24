@@ -149,7 +149,7 @@
                 </td>
         
             <td class="style2">
-                <asp:Button ID="btnUpdate" runat="server" Font-Bold="True" Height="22px" Text="Register" 
+                <asp:Button ID="btnUpdate" runat="server" Font-Bold="True" Height="22px" Text="Submit" 
                     Width="96px"  onclick="btnUpdate_Click"/>
                 <asp:Label ID="Label11" runat="server" ForeColor="#009900" 
                     style="font-style: italic; font-weight: 700"></asp:Label>

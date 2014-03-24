@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using System.Collections.Generic;
 
 using OnlineTicketSystem.Web.Models;
 using OnlineTicketSystem.Web.Database;
@@ -24,17 +25,29 @@ namespace OnlineTicketSystem.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             
+                List<LatestMovies> movies = _dbContext.GetLatestMovies();
+                DdlMovie.DataSource = movies;
+                DdlMovie.DataTextField = "MovieName";
+                
+                DdlMovie.DataBind();
+
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
 
+      
         }
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void TextReview_TextChanged(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }
