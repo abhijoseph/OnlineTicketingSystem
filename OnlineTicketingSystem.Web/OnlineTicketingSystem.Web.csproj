@@ -181,6 +181,13 @@
       <DependentUpon>Passwrd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TheaterDisplay.aspx.cs">
+      <DependentUpon>TheaterDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TheaterDisplay.aspx.designer.cs">
+      <DependentUpon>TheaterDisplay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TheaterHomePage.aspx.cs">
       <DependentUpon>TheaterHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,6 +261,7 @@
     <Content Include="InsertEnews.aspx" />
     <Content Include="InsertFilmReview.aspx" />
     <Content Include="MyAccount.aspx" />
+    <Content Include="TheaterDisplay.aspx" />
     <Content Include="TheaterHomePage.aspx" />
     <Content Include="UserControls\UserStatusCtrl.ascx" />
     <Content Include="Web.Master" />
