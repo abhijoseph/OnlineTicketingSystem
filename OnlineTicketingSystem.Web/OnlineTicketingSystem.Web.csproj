@@ -262,13 +262,13 @@
     <Content Include="InsertFilmReview.aspx" />
     <Content Include="MyAccount.aspx" />
     <Content Include="TheaterDisplay.aspx" />
+    <Content Include="Scripts\jquery-1.11.0.js" />
     <Content Include="TheaterHomePage.aspx" />
     <Content Include="UserControls\UserStatusCtrl.ascx" />
     <Content Include="Web.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

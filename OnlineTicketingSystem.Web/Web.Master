@@ -9,6 +9,7 @@
     <title>Online Ticketing System</title>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
     <%--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">--%>
+    <script src="/Scripts/jquery-1.11.0.js" type="text/javascript"></script>
     <link rel="Stylesheet" href="~/Content/Styles/Site.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

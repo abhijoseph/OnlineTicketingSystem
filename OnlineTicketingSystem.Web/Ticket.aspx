@@ -1,37 +1,49 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Ticket" Codebehind="Ticket.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Ticket" MasterPageFile="~/Web.master"  Codebehind="Ticket.aspx.cs" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
+<script type="text/javascript">
+    var seatMatrix = [];
+    function SelectCell(celltd) {
+        //alert('hi');
+        var selectedItemId = $(celltd).html();
+        if (isSeatSelected(selectedItemId)) {
+            $(celltd).css("background-color", "white");
+            removeSeat(selectedItemId);
+        }
+        else {
+            $(celltd).css("background-color", "green");
+            seatMatrix.push(selectedItemId);
+        }
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        
+        //      var tableRows = oDataGrid.rows;
+        //      var rawDataRows = new Array();
+        //      //somewhere to put the actual data
+        //      for (var i = 0; i < tableRows.length; i++) {
+        //         var thisRow = tableRows[i];
+        //         for (var j = 0; j < thisRow.cells.length; j++) {
+        //            alert(oDataGrid.rows(i).cells(j).innerHTML);
+        //            }
+        //         }
+    }
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <style type="text/css">
-        .style1
-        {
-            width: 64%;
-        }
-        .style2
-        {
-            width: 135px;
-        }
-        .style5
-        {
-            font-family: "Times New Roman", Times, serif;
-            font-weight: bold;
-            font-size: x-large;
-            width: 542px;
-        }
-        .style6
-        {
-            width: 542px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
+    function isSeatSelected(seatId) {
+        var searchedItem = $.grep(seatMatrix, function(item) {
+            if (item == seatId) return true;
+        });
+        return searchedItem.length > 0;
+    }
+
+    function removeSeat(seatId) {
+        var seatIndex = $.inArray(seatId, seatMatrix);
+        seatMatrix.splice(seatIndex, 1);
+    }
+
+    $(function() {
+        var oDataGrid = document.getElementById("<%= seatSelectionGrid.ClientID %>")
+        $(oDataGrid).css("cursor", "pointer");
+    });
+   </script>
+
     <table class="style1">
         <tr>
             <td class="style2">
@@ -180,25 +192,14 @@
                     onclick="Btnselect_Click" />
             </td>
             <td class="style6">
-                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" 
-                    Height="172px" Visible="False">
+                <asp:GridView ID="seatSelectionGrid" runat="server" 
+                    Height="172px" Visible="True" onrowdatabound="GridView1_RowDataBound">
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                    onselecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+                <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                    onselecting="SqlDataSource1_Selecting"></asp:SqlDataSource>--%>
             </td>
         </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-        </tr>
+
         <tr>
             <td class="style2">
                 &nbsp;</td>
@@ -209,6 +210,4 @@
             </td>
         </tr>
     </table>
-    </form>
-</body>
-</html>
+</asp:Content>
