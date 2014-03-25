@@ -8,22 +8,25 @@
                     Select Movie&nbsp;&nbsp;&nbsp;
                     
                     
+                    </td>
+                <td>
+                    
+                    
                     <asp:DropDownList ID="DdlMovie" runat="server" Height="17px" 
-                        onselectedindexchanged="DropDownList1_SelectedIndexChanged" Width="123px">
+                        onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
+                        style="margin-left: 0px">
                     </asp:DropDownList>
                     
                     
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td>
-                    Review<asp:TextBox ID="TextReview" runat="server" 
+                    Review</td>
+                <td>
+                    <asp:TextBox ID="TextReview" runat="server" 
                         ontextchanged="TextReview_TextChanged"></asp:TextBox>
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
            
         </table>
