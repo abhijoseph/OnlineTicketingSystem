@@ -1,6 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.latestmovie" MasterPageFile="~/Web.master" Codebehind="latestmovie.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 
+<div >
+ <img ="C:\Users\user1\Downloads\07-om-shanti-oshana-movie-review.jpg" 
+        alt="Online Ticket System" style="width: 558px; height: 373px;"/>
+
+
+
+</div>
     
         <table class="style1">
             <tr>
