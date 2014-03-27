@@ -10,8 +10,9 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using System.Data;
 using System.Data.SqlClient;
+using OnlineTicketSystem.Web.Models;
+using OnlineTicketSystem.Web.Database;
 
 namespace OnlineTicketSystem.Web
 {
@@ -20,6 +21,8 @@ namespace OnlineTicketSystem.Web
         //SqlConnection con = new SqlConnection(@"server=.\;database=onlineticket;uid=sa;pwd=");
         private static string _connectionString = ConfigurationManager.ConnectionStrings["onlineticketConnectionString"].ConnectionString;//ConfigurationManager.AppSettings["onlineticketConnectionString"].ToString();
         SqlConnection _sqlConnection = new SqlConnection(_connectionString);
+        public DatabaseContext _dbContext = new DatabaseContext();
+        string seatsBooked = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,10 +41,23 @@ namespace OnlineTicketSystem.Web
 
                 }
 
-                seatSelectionGrid.DataSource = GetSeatMatrixTable();
-                seatSelectionGrid.DataBind();
-            }
+                
 
+                string str1 = "select distinct ShowTimeKey, Time, ShowName from dbo.ShowTime";
+                SqlDataAdapter adpt1 = new SqlDataAdapter(str1, _sqlConnection);
+                DataSet ds1 = new DataSet();
+                adpt1.Fill(ds1);
+                if (ds1.Tables[0].Rows.Count > 0)
+                {
+                    Ddltime.DataSource = ds1.Tables[0];
+                    Ddltime.DataValueField = "ShowTimeKey";
+                    Ddltime.DataTextField = "Time";
+                    Ddltime.DataBind();
+
+
+                }
+            }
+            
 
         }
 
@@ -93,14 +109,15 @@ namespace OnlineTicketSystem.Web
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string str = "select distinct TheaterName from register where City='" + Ddlcity.SelectedValue + "'";
+            string str = "select distinct TheaterKey, TheaterName from MasterTheater where City='" + Ddlcity.SelectedValue + "'";
             SqlDataAdapter adpt = new SqlDataAdapter(str, _sqlConnection);
             DataSet ds = new DataSet();
             adpt.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Ddltheater.DataSource = ds.Tables[0];
-                Ddltheater.DataValueField = "TheaterName";
+                Ddltheater.DataValueField = "TheaterKey";
+                Ddltheater.DataTextField = "TheaterName";
                 Ddltheater.DataBind();
             }
         }
@@ -117,10 +134,18 @@ namespace OnlineTicketSystem.Web
         }
         protected void BtCnfirm_Click(object sender, EventArgs e)
         {
-            String str = "insert into Ticket values('" + Ddlcity.SelectedValue + "','" + Ddltheater.SelectedValue + "','" + Ddllanguage.SelectedValue + "','" + Ddlmovie.SelectedValue + "','" + Txtbxdate.Text + "','" + Ddltime.SelectedValue + "','" + Txtbxseat.Text + "')";
-            SqlCommand cmd = new SqlCommand(str, _sqlConnection);
-            _sqlConnection.Open();
-            cmd.ExecuteNonQuery();
+            string seatMatrix = hiddenSeatMatrix.Value;
+            int theaterKey = Int32.Parse(Ddltheater.SelectedValue);
+            User user = Session["user"] as User;
+            int userKey = user == null ? -1 : user.UserKey; 
+            DateTime selectedDate = CalendarExtender1.SelectedDate.Value;
+            string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString() + selectedDate.Day.ToString();
+            int showTimeKey = Int32.Parse(Ddltime.SelectedValue);
+            _dbContext.BookTicket(theaterKey, showTimeKey, userKey, Int32.Parse(dateKey), seatMatrix);
+            //String str = "insert into Ticket values('" + Ddlcity.SelectedValue + "','" + Ddltheater.SelectedValue + "','" + Ddllanguage.SelectedValue + "','" + Ddlmovie.SelectedValue + "','" + Txtbxdate.Text + "','" + Ddltime.SelectedValue + "','" + Txtbxseat.Text + "')";
+            //SqlCommand cmd = new SqlCommand(str, _sqlConnection);
+            //_sqlConnection.Open();
+            //cmd.ExecuteNonQuery();
         }
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
@@ -139,8 +164,26 @@ namespace OnlineTicketSystem.Web
         {
             foreach (TableCell cell in e.Row.Cells)
             {
-                cell.Attributes["onclick"] = "javascript:SelectCell(this);";
+                if (seatsBooked.IndexOf(cell.Text) > 0)
+                {
+                    cell.Attributes["onclick"] = "javascript:SelectCell(this);";
+                }
+                else
+                {
+                    cell.Attributes["class"] = "not-available";
+                }
             }
+        }
+
+        protected void btnGetSeats_Click(object sender, EventArgs e)
+        {
+             int theaterKey = Int32.Parse(Ddltheater.SelectedValue);
+            DateTime selectedDate = CalendarExtender1.SelectedDate.Value;
+            string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString() + selectedDate.Day.ToString();
+            int showTimeKey = Int32.Parse(Ddltime.SelectedValue);
+            seatsBooked = _dbContext.GetBookedSeats(theaterKey, showTimeKey, Int32.Parse(dateKey));
+            seatSelectionGrid.DataSource = GetSeatMatrixTable();
+            seatSelectionGrid.DataBind();
         }
     }
 }

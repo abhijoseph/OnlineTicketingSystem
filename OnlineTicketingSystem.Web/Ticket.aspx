@@ -1,16 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Ticket" MasterPageFile="~/Web.master"  Codebehind="Ticket.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Web.Ticket" MasterPageFile="~/Web.master"  Codebehind="Ticket.aspx.cs" Culture="auto" UICulture="auto"%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
+<ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true" ID="ScriptManager1" CombineScripts="false" />
 <script type="text/javascript">
     var seatMatrix = [];
     function SelectCell(celltd) {
         //alert('hi');
         var selectedItemId = $(celltd).html();
         if (isSeatSelected(selectedItemId)) {
-            $(celltd).css("background-color", "white");
+            //$(celltd).css("background-color", "white");
+            $(celltd).addClass('seat-unselected');
             removeSeat(selectedItemId);
         }
         else {
-            $(celltd).css("background-color", "green");
+            //$(celltd).css("background-color", "green");
+            $(celltd).attr('class', 'seat-selected');
             seatMatrix.push(selectedItemId);
         }
 
@@ -38,12 +43,17 @@
         seatMatrix.splice(seatIndex, 1);
     }
 
+    function setSeatMatrix() {
+        var hiddenSM = document.getElementById("<%= hiddenSeatMatrix.ClientID %>")
+        hiddenSM.value = seatMatrix;
+    }
+
     $(function() {
-        var oDataGrid = document.getElementById("<%= seatSelectionGrid.ClientID %>")
-        $(oDataGrid).css("cursor", "pointer");
+        //var oDataGrid = document.getElementById("<%= seatSelectionGrid.ClientID %>")
+        //$(oDataGrid).css("cursor", "pointer");
     });
    </script>
-
+<asp:HiddenField runat="server" ID="hiddenSeatMatrix" />
     <table class="style1">
         <tr>
             <td class="style2">
@@ -142,9 +152,12 @@
                 <asp:Label ID="Lbldate" runat="server" Text="Date"></asp:Label>
             </td>
             <td class="style6">
-                <asp:TextBox ID="Txtbxdate" runat="server" style="text-align: center"></asp:TextBox>
+               <%-- <asp:TextBox ID="Txtbxdate" runat="server" style="text-align: center"></asp:TextBox>--%>
+                
+                <asp:TextBox runat="server" ID="txtDate" />
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" Format="MM/dd/yyyy" TargetControlID="txtDate" StartDate="8/3/2010" EndDate="10/7/2010" SelectedDate="8/3/2010" />
                 <asp:RequiredFieldValidator ID="Rfdate" runat="server" 
-                    ErrorMessage="Select date" ControlToValidate="Txtbxdate"></asp:RequiredFieldValidator>
+                    ErrorMessage="Select date" ControlToValidate="txtDate"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -162,6 +175,7 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="Rftime" runat="server" 
                     ErrorMessage="Select time" ControlToValidate="Ddltime"></asp:RequiredFieldValidator>
+                    
             </td>
         </tr>
         <tr>
@@ -184,7 +198,9 @@
             <td class="style2">
                 &nbsp;</td>
             <td class="style6">
-                &nbsp;</td>
+                <asp:Button ID="btnGetSeats" runat="server" onclick="btnGetSeats_Click" 
+                    Text="Get Seats" CausesValidation="False" />
+            </td>
         </tr>
         <tr>
             <td class="style2">
@@ -192,7 +208,7 @@
                     onclick="Btnselect_Click" />
             </td>
             <td class="style6">
-                <asp:GridView ID="seatSelectionGrid" runat="server" 
+                <asp:GridView ID="seatSelectionGrid" runat="server" class="seatselection-grid" CellPadding="1" CellSpacing="1"
                     Height="172px" Visible="True" onrowdatabound="GridView1_RowDataBound">
                 </asp:GridView>
                 <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
@@ -204,9 +220,8 @@
             <td class="style2">
                 &nbsp;</td>
             <td class="style6">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                &nbsp;<asp:Button ID="BtCnfirm" runat="server" Text="Confirm" 
-                    onclick="BtCnfirm_Click" />
+               <asp:Button ID="BtCnfirm" runat="server" Text="Confirm" 
+                  OnClientClick="javascript:setSeatMatrix();"  onclick="BtCnfirm_Click" CausesValidation="False" />
             </td>
         </tr>
     </table>

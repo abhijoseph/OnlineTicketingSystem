@@ -200,3 +200,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
     color:Gray;
     text-decoration:none;
 }
+
+
+.seatselection-grid {
+ 
+}
+
+.seatselection-grid td {
+    border-radius: 8px;
+    border: solid 1px white;
+    padding: 10px;
+    /*background-color: whitesmoke;
+    color: Gray;*/
+}
+
+.seatselection-grid td:hover {
+    color:#f1f1f1;
+    background-color:#787878;
+}
+
+.seat-selected {
+    background-color: Green;
+    color: White;
+    cursor: pointer;
+}
+
+.seat-unselected {
+    background-color: whitesmoke;
+    color: Gray;
+    cursor: pointer;
+}
+
+seat-notavailable {
+    background-color: Black;
+    color:White;
+}

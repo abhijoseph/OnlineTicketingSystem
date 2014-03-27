@@ -38,6 +38,7 @@ namespace OnlineTicketSystem.Web
             User user = _dbContext.GetUser(txtbxusr.Text, Txtbxpswd.Text);
             if (user != null)
             {
+                Session["user"] = user;
                 Session["uid"] = user.UserName;
                 Session["Rolekey"]=user.RoleKey;
                 _dbContext.InsertUserLog(user.UserKey, HttpContext.Current.Session.SessionID);
