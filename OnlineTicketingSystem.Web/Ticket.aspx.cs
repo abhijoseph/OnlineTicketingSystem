@@ -23,6 +23,7 @@ namespace OnlineTicketSystem.Web
         SqlConnection _sqlConnection = new SqlConnection(_connectionString);
         public DatabaseContext _dbContext = new DatabaseContext();
         string seatsBooked = string.Empty;
+        string mySeats = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +39,7 @@ namespace OnlineTicketSystem.Web
                     Ddlcity.DataValueField = "City";
                     Ddlcity.DataBind();
 
-
+                    Ddlcity.SelectedIndex = 0;
                 }
 
                 
@@ -120,6 +121,11 @@ namespace OnlineTicketSystem.Web
                 Ddltheater.DataTextField = "TheaterName";
                 Ddltheater.DataBind();
             }
+            else
+            {
+                Ddltheater.Items.Clear();
+                Ddltheater.DataBind();
+            }
         }
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -142,6 +148,8 @@ namespace OnlineTicketSystem.Web
             string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString() + selectedDate.Day.ToString();
             int showTimeKey = Int32.Parse(Ddltime.SelectedValue);
             _dbContext.BookTicket(theaterKey, showTimeKey, userKey, Int32.Parse(dateKey), seatMatrix);
+
+            RefreshSeats();
             //String str = "insert into Ticket values('" + Ddlcity.SelectedValue + "','" + Ddltheater.SelectedValue + "','" + Ddllanguage.SelectedValue + "','" + Ddlmovie.SelectedValue + "','" + Txtbxdate.Text + "','" + Ddltime.SelectedValue + "','" + Txtbxseat.Text + "')";
             //SqlCommand cmd = new SqlCommand(str, _sqlConnection);
             //_sqlConnection.Open();
@@ -162,28 +170,53 @@ namespace OnlineTicketSystem.Web
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            foreach (TableCell cell in e.Row.Cells)
+            if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (seatsBooked.IndexOf(cell.Text) > 0)
+                foreach (TableCell cell in e.Row.Cells)
                 {
-                    cell.Attributes["onclick"] = "javascript:SelectCell(this);";
-                }
-                else
-                {
-                    cell.Attributes["class"] = "not-available";
+                    if (Array.IndexOf(seatsBooked.Split(','), cell.Text) == -1 || Array.IndexOf( mySeats.Split(','), cell.Text) > -1)
+                    {
+                        cell.Attributes["onclick"] = "javascript:SelectCell(this);";
+                        if (Array.IndexOf(mySeats.Split(','), cell.Text) > -1)
+                        {
+                            cell.CssClass = "seat-selected";
+                        }
+                    }
+                    else
+                    {
+                        //cell.Attributes["class"] = "seat-notavailable";
+                        cell.CssClass = "seat-notavailable";
+                    }
                 }
             }
         }
 
         protected void btnGetSeats_Click(object sender, EventArgs e)
         {
-             int theaterKey = Int32.Parse(Ddltheater.SelectedValue);
-            DateTime selectedDate = CalendarExtender1.SelectedDate.Value;
-            string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString() + selectedDate.Day.ToString();
-            int showTimeKey = Int32.Parse(Ddltime.SelectedValue);
-            seatsBooked = _dbContext.GetBookedSeats(theaterKey, showTimeKey, Int32.Parse(dateKey));
-            seatSelectionGrid.DataSource = GetSeatMatrixTable();
-            seatSelectionGrid.DataBind();
+            RefreshSeats();
+        }
+
+        public void RefreshSeats()
+        {
+            User user = Session["user"] as User;
+            int userKey = user == null ? -1 : user.UserKey; 
+            string theaterSelectedValue = Ddltheater.SelectedValue;
+            DateTime dateSelectedValue = CalendarExtender1.SelectedDate.Value;
+            string showTimeSelectedValue = Ddltime.SelectedValue;
+            if (theaterSelectedValue != null &&theaterSelectedValue != string.Empty && 
+                dateSelectedValue != null && 
+                showTimeSelectedValue != null && showTimeSelectedValue != string.Empty)
+            {
+                int theaterKey = Int32.Parse(Ddltheater.SelectedValue);
+                DateTime selectedDate = CalendarExtender1.SelectedDate.Value;
+                string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString() + selectedDate.Day.ToString();
+                int showTimeKey = Int32.Parse(Ddltime.SelectedValue);
+                seatsBooked = _dbContext.GetBookedSeatsforMovieTheater(theaterKey, showTimeKey, Int32.Parse(dateKey));
+                mySeats = _dbContext.GetBookedSeatsforUserforMovieTheater(theaterKey, showTimeKey, Int32.Parse(dateKey), userKey);
+                hiddenMySeats.Value = mySeats;
+                seatSelectionGrid.DataSource = GetSeatMatrixTable();
+                seatSelectionGrid.DataBind();
+            }
         }
     }
 }

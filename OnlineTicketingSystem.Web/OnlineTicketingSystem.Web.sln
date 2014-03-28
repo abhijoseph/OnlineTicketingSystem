@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Web Developer Express 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTicketingSystem.Web", "OnlineTicketingSystem.Web.csproj", "{5702F884-534C-4633-B748-95CF28434B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTicketingSystem.AzureWeb", "OnlineTicketingSystem.AzureWeb\OnlineTicketingSystem.AzureWeb.csproj", "{F84E9884-459A-4F4C-BBAE-0FD2F4AAE713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{5702F884-534C-4633-B748-95CF28434B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5702F884-534C-4633-B748-95CF28434B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5702F884-534C-4633-B748-95CF28434B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84E9884-459A-4F4C-BBAE-0FD2F4AAE713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84E9884-459A-4F4C-BBAE-0FD2F4AAE713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84E9884-459A-4F4C-BBAE-0FD2F4AAE713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84E9884-459A-4F4C-BBAE-0FD2F4AAE713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
