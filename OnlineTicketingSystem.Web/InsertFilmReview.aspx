@@ -29,9 +29,12 @@
                
             </td>
             <td>
+           <asp:TextBox ID="TextReview" runat="server" Width="566px" Rows="3" ReadOnly="false"
+ BorderStyle="Dotted" BorderWidth="0" TextMode="MultiLine" Text='<%# Eval("Notes") %>' 
+                    Height="255px"></asp:TextBox>    
                
-<asp:TextBox ID="TextReview" runat="server" 
-                    ontextchanged="TextReview_TextChanged" style="margin-left: 0px"></asp:TextBox>
+ <%-- <asp:TextBox ID="TextReview" runat="server" 
+                    ontextchanged="TextReview_TextChanged" style="margin-left: 0px"></asp:TextBox>--%>
                
                 <asp:RequiredFieldValidator ID="RFVReview" runat="server" 
                     ControlToValidate="TextReview" ErrorMessage="Enter Review"></asp:RequiredFieldValidator>

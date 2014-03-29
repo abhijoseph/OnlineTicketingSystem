@@ -23,9 +23,15 @@
             <tr>
                 <td>
                     Review</td>
-                <td>
-                    <asp:TextBox ID="TextReview" runat="server" 
-                        ontextchanged="TextReview_TextChanged"></asp:TextBox>
+                <td bordercolor="Black">
+                
+                <asp:TextBox ID="TextReview" runat="server" Width="566px" Rows="3" ReadOnly="false"
+ BorderStyle="Dotted" BorderWidth="0" TextMode="MultiLine" 
+                    Height="255px" BorderColor="#000066" ontextchanged="TextReview_TextChanged1"></asp:TextBox> 
+                
+                
+                    <%-- <asp:TextBox ID="TextReview" runat="server" 
+                        ontextchanged="TextReview_TextChanged"></asp:TextBox>--%>
                 </td>
             </tr>
            

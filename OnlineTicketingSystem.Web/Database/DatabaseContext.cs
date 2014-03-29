@@ -21,16 +21,15 @@ namespace OnlineTicketSystem.Web.Database
             _sqlConnection = new SqlConnection(_connectionString);
         }
 
-        #region User
         public bool InsertUser(User user)
         {
-            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertUser",
-                new SqlParameter("@FirstName", SqlDbType.VarChar).Value = user.FirstName,
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertUser",  
+                new SqlParameter("@FirstName", SqlDbType.VarChar).Value = user.FirstName, 
                 new SqlParameter("@LastName", SqlDbType.VarChar).Value = user.LastName,
                 new SqlParameter("@UserName", SqlDbType.VarChar).Value = user.UserName,
                 new SqlParameter("@Password", SqlDbType.VarChar).Value = user.Password,
                 new SqlParameter("@EmailId", SqlDbType.VarChar).Value = user.EmailId,
-                new SqlParameter("@DateOfBirth", SqlDbType.DateTime).Value = DateTime.Parse(user.DateOfBirth));
+                new SqlParameter("@DateOfBirth",SqlDbType.DateTime).Value = DateTime.Parse(user.DateOfBirth));
             return ret > 0;
         }
 
@@ -38,9 +37,9 @@ namespace OnlineTicketSystem.Web.Database
         {
             SqlDataReader reader = null;
             User user = null;
-            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetUser",
-                new SqlParameter("@UserName", SqlDbType.VarChar).Value = userId,
-                new SqlParameter("@Password", SqlDbType.VarChar).Value = password);
+            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetUser",  
+                new SqlParameter("@UserName", SqlDbType.VarChar).Value = userId, 
+                new SqlParameter("@Password", SqlDbType.VarChar).Value =password);
             while (reader.Read())
             {
                 user = new User();
@@ -51,7 +50,7 @@ namespace OnlineTicketSystem.Web.Database
                 user.UserName = DBNull.Value == reader["UserName"] ? string.Empty : reader["UserName"].ToString();
                 user.DateOfBirth = DBNull.Value == reader["DateOfBirth"] ? string.Empty : reader["DateOfBirth"].ToString();
                 user.RoleKey = DBNull.Value == reader["RoleKey"] ? 1 : Convert.ToInt32(reader["RoleKey"].ToString());
-
+              
             }
             reader.Close();
             reader.Dispose();
@@ -88,19 +87,15 @@ namespace OnlineTicketSystem.Web.Database
             return ret > 0;
         }
 
-        #endregion
-
-        #region Theater
         public void RegisterTheater(Theater theater)
         {
             String str = "insert into Register values('" + theater.TheaterName + "','" + theater.TheaterCode + "','" + theater.TheaterCode + "','" + theater.Password + "','" + theater.EmailId + "','" + theater.City + "','" + theater.Location + "','" + theater.SeatingCapacity + "')";
             SqlCommand cmd = new SqlCommand(str, _sqlConnection);
             _sqlConnection.Open();
-            // cmd.ExecuteNonQuery();
+           // cmd.ExecuteNonQuery();
             _sqlConnection.Close();
 
         }
-        #endregion
 
         #region ENews Functions
         public List<EntertainmentNewsInfo> GetEntertainmentNews()
@@ -131,12 +126,11 @@ namespace OnlineTicketSystem.Web.Database
                 new SqlParameter("@Description", SqlDbType.VarChar).Value = enewsInfo.Description,
                 new SqlParameter("@PostedOn", SqlDbType.DateTime).Value = enewsInfo.PostedOn,
                 new SqlParameter("@PostedBy", SqlDbType.VarChar).Value = enewsInfo.PostedBy);
-
+               
             return ret > 0;
         }
         #endregion
 
-        #region LatestMovies
         public bool InsertLatestMovies(LatestMovies movies)
         {
             int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertLatestMovies",
@@ -167,28 +161,25 @@ namespace OnlineTicketSystem.Web.Database
             reader.Close();
             reader.Dispose();
             return LatestMoviesList;
-
-        }
-        #endregion
-
-        #region FilmReviews
+     
+       }
         public bool InsertFilmReview(FilmReview review)
         {
             int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_InsertFilmReview",
                 new SqlParameter("@MovieName", SqlDbType.VarChar).Value = review.MovieName,
                 new SqlParameter("@Review", SqlDbType.VarChar).Value = review.Review);
-            // new SqlParameter("@UserName", SqlDbType.VarChar).Value = user.UserName,
-            //new SqlParameter("@Password", SqlDbType.VarChar).Value = user.Password,
-            //new SqlParameter("@EmailId", SqlDbType.VarChar).Value = user.EmailId);
+               // new SqlParameter("@UserName", SqlDbType.VarChar).Value = user.UserName,
+                //new SqlParameter("@Password", SqlDbType.VarChar).Value = user.Password,
+                //new SqlParameter("@EmailId", SqlDbType.VarChar).Value = user.EmailId);
             return ret > 0;
         }
-        public FilmReview GetFilmReview()
+       public FilmReview GetFilmReview()
         {
-
-            SqlDataReader reader = null;
-            FilmReview review = null;
-            reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetFilmReview");
-            while (reader.Read())
+        
+           SqlDataReader reader = null;
+           FilmReview review = null;
+           reader = SqlHelper.ExecuteReader(_sqlConnection, "dbo.usp_GetFilmReview");
+           while (reader.Read())
             {
                 review = new FilmReview();
                 review.MovieName = DBNull.Value == reader["MovieName"] ? string.Empty : reader["MovieName"].ToString();
@@ -196,68 +187,15 @@ namespace OnlineTicketSystem.Web.Database
                 //movies.Director = DBNull.Value == reader["Director"] ? string.Empty : reader["Director"].ToString();
                 //movies.Actor = DBNull.Value == reader["Actor"] ? string.Empty : reader["Actor"].ToString();
                 //movies.Actress = DBNull.Value == reader["Actress"] ? string.Empty : reader["Actress"].ToString();
-
+                
 
             }
             reader.Close();
             reader.Dispose();
             return review;
         }
-        #endregion
 
-        #region TicketBooking
+    
 
-        public string GetBookedSeats(int theaterKey, int showTimeKey, int dateKey)
-        {
-            string seats = string.Empty;
-            SqlParameter seatOut = new SqlParameter("@Seats", seats);
-            seatOut.Direction = ParameterDirection.Output;
-            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_getBookedSeats",
-                new SqlParameter("@TheaterKey", SqlDbType.Int).Value = theaterKey,
-                new SqlParameter("@ShowTimeKey", SqlDbType.Int).Value = showTimeKey,
-                new SqlParameter("@DateKey", SqlDbType.Int).Value = dateKey,
-                seatOut.Value = seats);
-            return seatOut.Value as string;
-        }
-
-        public List<BookedTicket> GetAllBookedTicketsforUser(int userKey)
-        {
-            List<BookedTicket> bookedTickets = new List<BookedTicket>();
-            bookedTickets.Add(new BookedTicket());
-            return bookedTickets;
-        }
-
-        public bool BookTicket(int theaterKey, int showTimeKey, int userKey, int dateKey, string seats)
-        {
-            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_bookTicket",
-                new SqlParameter("@TheaterKey", SqlDbType.Int).Value = theaterKey,
-                new SqlParameter("@ShowTimeKey", SqlDbType.Int).Value = showTimeKey,
-                new SqlParameter("@UserKey", SqlDbType.Int).Value = userKey,
-                new SqlParameter("@DateKey", SqlDbType.Int).Value = dateKey,
-                new SqlParameter("@Seats", SqlDbType.VarChar).Value = seats);
-            return ret > 0;
-        }
-
-        public bool CancelAllTicketsForTheater(int movieTheaterKey, int showTimeKey, int userKey, int dateKey)
-        {
-            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_cancelAllTicketsForTheater",
-                new SqlParameter("@MovieTheaterKey", SqlDbType.Int).Value = movieTheaterKey,
-                new SqlParameter("@ShowTimeKey", SqlDbType.Int).Value = showTimeKey,
-                new SqlParameter("@UserKey", SqlDbType.Int).Value = userKey,
-                new SqlParameter("@DateKey", SqlDbType.Int).Value = dateKey);
-            return ret > 0;
-        }
-
-        public bool CancelTicketsForTheater(int movieTheaterKey, int showTimeKey, int userKey, int dateKey, string seats)
-        {
-            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_cancelTicketsForTheater",
-                new SqlParameter("@MovieTheaterKey", SqlDbType.Int).Value = movieTheaterKey,
-                new SqlParameter("@ShowTimeKey", SqlDbType.Int).Value = showTimeKey,
-                new SqlParameter("@UserKey", SqlDbType.Int).Value = userKey,
-                new SqlParameter("@DateKey", SqlDbType.Int).Value = dateKey,
-                new SqlParameter("@Seats", SqlDbType.VarChar).Value = seats);
-            return ret > 0;
-        }
-        #endregion
     }
 }

@@ -4,6 +4,34 @@
 
 
 
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                    DataKeyNames="Emailid" DataSourceID="SqlDataSource1" Height="246px" 
+                    style="margin-top: 7px; margin-bottom: 2px" Width="304px" 
+                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="Firstname" HeaderText="Firstname" 
+                            SortExpression="Firstname" />
+                        <asp:BoundField DataField="Emailid" HeaderText="Emailid" ReadOnly="True" 
+                            SortExpression="Emailid" />
+                             <asp:TemplateField HeaderText="Edit User Status">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnFaculty" runat="server" OnClientClick="showimage(this); return false;"
+                        Text='Activate'></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+                           
+                          <%--<asp:ButtonField  ButtonType="Button" CommandName="Edit" Text="Edit User" />--%>
+                           </Columns>
+                           </asp:GridView>
+
+
+
+
+    <br />
+
+
+
+
     <table class="style1">
        
         <tr>
@@ -14,21 +42,7 @@
                     onselecting="SqlDataSource1_Selecting">
                 </asp:SqlDataSource>
             </td>
-            <td class="style8">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-                    DataKeyNames="Emailid" DataSourceID="SqlDataSource1" Height="246px" 
-                    style="margin-top: 7px; margin-bottom: 2px" Width="304px" 
-                    onselectedindexchanged="GridView1_SelectedIndexChanged">
-                    <Columns>
-                        <asp:BoundField DataField="Firstname" HeaderText="Firstname" 
-                            SortExpression="Firstname" />
-                        <asp:BoundField DataField="Emailid" HeaderText="Emailid" ReadOnly="True" 
-                            SortExpression="Emailid" />
-                          
-                            <asp:ButtonField  ButtonType="Button" CommandName="Edit" Text="Edit User" />
-                           </Columns> 
-                    
-                </asp:GridView>
+            <td class="style8" unselectable="off">
                 <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
                     DataSourceID="SqlDataSource2" Height="246px" style="margin-top: 12px" 
                     Width="383px">
