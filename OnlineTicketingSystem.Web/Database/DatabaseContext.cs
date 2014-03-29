@@ -195,6 +195,72 @@ namespace OnlineTicketSystem.Web.Database
             return review;
         }
 
+        #endregion
+
+        #region TicketBooking
+
+        public string GetBookedSeatsforMovieTheater(int theaterKey, int showTimeKey, int dateKey)
+        {
+            string seats = string.Empty;
+            SqlParameter seatOut = new SqlParameter("@Seats", SqlDbType.VarChar);
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = new SqlParameter("@TheaterKey", SqlDbType.Int);
+            parameters[0].Value = theaterKey;
+            parameters[1] = new SqlParameter("@ShowTimeKey", SqlDbType.Int);
+            parameters[1].Value = showTimeKey;
+            parameters[2] = new SqlParameter("@DateKey", SqlDbType.Int);
+            parameters[2].Value = dateKey;
+            parameters[3] = new SqlParameter("@Seats", SqlDbType.VarChar, 500);
+            parameters[3].Direction = ParameterDirection.Output;
+            seatOut.Direction = ParameterDirection.Output;
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, CommandType.StoredProcedure, "dbo.usp_getBookedSeatsforMovieTheater", parameters);
+            //int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, CommandType.StoredProcedure, "dbo.usp_getBookedSeats",
+            //    new SqlParameter("@TheaterKey", SqlDbType.Int).Value = theaterKey,
+            //    new SqlParameter("@ShowTimeKey", SqlDbType.Int).Value = showTimeKey,
+            //    new SqlParameter("@DateKey", SqlDbType.Int).Value = dateKey,
+            //    seats);
+            return parameters[3].Value == DBNull.Value ? string.Empty : parameters[3].Value as string;
+        }
+
+        public string GetBookedSeatsforUserforMovieTheater(int theaterKey, int showTimeKey, int dateKey, int userKey)
+        {
+            string seats = string.Empty;
+            SqlParameter seatOut = new SqlParameter("@Seats", SqlDbType.VarChar);
+            SqlParameter[] parameters = new SqlParameter[5];
+            parameters[0] = new SqlParameter("@TheaterKey", SqlDbType.Int);
+            parameters[0].Value = theaterKey;
+            parameters[1] = new SqlParameter("@ShowTimeKey", SqlDbType.Int);
+            parameters[1].Value = showTimeKey;
+            parameters[2] = new SqlParameter("@DateKey", SqlDbType.Int);
+            parameters[2].Value = dateKey;
+            parameters[3] = new SqlParameter("@UserKey", SqlDbType.Int);
+            parameters[3].Value = userKey;
+            parameters[4] = new SqlParameter("@Seats", SqlDbType.VarChar, 500);
+            parameters[4].Direction = ParameterDirection.Output;
+            seatOut.Direction = ParameterDirection.Output;
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, CommandType.StoredProcedure, "dbo.usp_getBookedSeatsforUserforMovieTheater", parameters);
+            return parameters[4].Value == DBNull.Value ? string.Empty : parameters[4].Value as string;
+        }
+
+        public List<BookedTicket> GetBookedSeatsforUser(int userKey)
+        {
+            List<BookedTicket> bookedTickets = new List<BookedTicket>();
+            bookedTickets.Add(new BookedTicket());
+            return bookedTickets;
+        }
+
+        public bool BookTicket(int theaterKey, int showTimeKey, int userKey, int dateKey, string seats)
+        {
+            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, "dbo.usp_bookTicket",
+                new SqlParameter("@TheaterKey", SqlDbType.Int).Value = theaterKey,
+                new SqlParameter("@ShowTimeKey", SqlDbType.Int).Value = showTimeKey,
+                new SqlParameter("@UserKey", SqlDbType.Int).Value = userKey,
+                new SqlParameter("@DateKey", SqlDbType.Int).Value = dateKey,
+                new SqlParameter("@Seats", SqlDbType.VarChar).Value = seats);
+            return ret > 0;
+        }
+
+
     
 
     }

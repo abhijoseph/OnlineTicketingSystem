@@ -216,8 +216,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
 }
 
 .seatselection-grid td:hover {
-    color:#f1f1f1;
-    background-color:#787878;
+    color:Gray;
+    background-color:#b7b7b7;
 }
 
 .seat-selected {
@@ -227,12 +227,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
 }
 
 .seat-unselected {
-    background-color: whitesmoke;
+    background-color: Transparent;
     color: Gray;
     cursor: pointer;
 }
 
-seat-notavailable {
-    background-color: Black;
-    color:White;
+
+.seat-notavailable {
+    background-color: #b7b7b7;
+    color:Gray;
+}
+.seat-notavailable:hover {
+    background-color: #b7b7b7;
+    color:Gray;
 }

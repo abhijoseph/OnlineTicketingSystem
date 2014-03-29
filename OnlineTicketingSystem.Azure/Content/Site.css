@@ -1,0 +1,116 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'PT Sans Narrow', Calibri;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+#admin-nav {
+    list-style-type: none;
+    padding: 0px;
+margin: 0px;
+display: inline-block;
+margin-right: 100px;
+}
+
+
+#status-control {
+    text-align: right;
+    /*padding: 5px 100px 5px 0px;*/
+    /*color: rgb(126, 123, 123);
+    display: inline-block;
+    width: 100%;
+background-color: rgb(247, 247, 247);*/
+}
+
+
+/*News Description styles*/
+
+.news-description 
+{
+    background-color: rgb(226, 223, 223);
+    padding: 30px;
+}
+.news-heading
+{
+    font-size: 24px;
+    text-align: left;
+}
+
+/*Seat Selection Styles*/
+
+.seatselection-grid {
+ 
+}
+
+.seatselection-grid td {
+    border-radius: 8px;
+    border: solid 1px white;
+    padding: 10px;
+    /*background-color: whitesmoke;
+    color: Gray;*/
+}
+
+.seatselection-grid td:hover {
+    color:Gray;
+    background-color:#b7b7b7;
+}
+
+.seat-selected {
+    background-color: Green;
+    color: White;
+    cursor: pointer;
+}
+
+.seat-unselected {
+    background-color: Transparent;
+    color: Gray;
+    cursor: pointer;
+}
+
+
+.seat-notavailable {
+    background-color: #b7b7b7;
+    color:Gray;
+}
+.seat-notavailable:hover {
+    background-color: #b7b7b7;
+    color:Gray;
+}

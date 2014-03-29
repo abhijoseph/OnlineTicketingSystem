@@ -8,7 +8,7 @@
     function SelectCell(celltd) {
         //alert('hi');
         var selectedItemId = $(celltd).html();
-        if (isSeatSelected(selectedItemId)) {
+        if (isSeatSelected(selectedItemId) || isInMySeat(selectedItemId)) {
             //$(celltd).css("background-color", "white");
             $(celltd).addClass('seat-unselected');
             removeSeat(selectedItemId);
@@ -38,14 +38,36 @@
         return searchedItem.length > 0;
     }
 
+    function isInMySeat(seatId) {
+        var hiddenMySeats = document.getElementById("<%= hiddenMySeats.ClientID %>");
+
+        var mySeatsMatrix = hiddenMySeats.value.split(",");
+        var searchedItem = $.grep(mySeatsMatrix, function(item) {
+            if (item == seatId) return true;
+        });
+        return searchedItem.length > 0;
+    }
+
     function removeSeat(seatId) {
         var seatIndex = $.inArray(seatId, seatMatrix);
         seatMatrix.splice(seatIndex, 1);
+
+        var hiddenMySeats = document.getElementById("<%= hiddenMySeats.ClientID %>");
+
+        var mySeatsMatrix = hiddenMySeats.value.split(",");
+        var mySeatIndex = $.inArray(seatId, mySeatsMatrix);
+        mySeatsMatrix.splice(mySeatIndex, 1);
+        document.getElementById("<%= hiddenMySeats.ClientID %>").value = mySeatsMatrix;
     }
 
     function setSeatMatrix() {
-        var hiddenSM = document.getElementById("<%= hiddenSeatMatrix.ClientID %>")
-        hiddenSM.value = seatMatrix;
+        var hiddenSM = document.getElementById("<%= hiddenSeatMatrix.ClientID %>");
+        var hiddenMySeats = document.getElementById("<%= hiddenMySeats.ClientID %>");
+        var mySeatsMatrix = hiddenMySeats.value.split(",");
+
+        var mergedSeatMatrix = $.merge($.merge([], seatMatrix), mySeatsMatrix);
+        var finalSeatMatrix = $.unique(mergedSeatMatrix).sort();
+        hiddenSM.value = finalSeatMatrix;
     }
 
     $(function() {
@@ -54,6 +76,7 @@
     });
    </script>
 <asp:HiddenField runat="server" ID="hiddenSeatMatrix" />
+<asp:HiddenField runat="server" ID="hiddenMySeats" />
     <table class="style1">
         <tr>
             <td class="style2">
@@ -184,7 +207,7 @@
             <td class="style6">
                 &nbsp;</td>
         </tr>
-        <tr>
+        <%--<tr>
             <td class="style2">
                 <asp:Label ID="lblseat" runat="server" Text="No:of  Seats"></asp:Label>
             </td>
@@ -193,7 +216,7 @@
                 <asp:RequiredFieldValidator ID="seat" runat="server" 
                     ErrorMessage="Enter no:of seats" ControlToValidate="Txtbxseat"></asp:RequiredFieldValidator>
             </td>
-        </tr>
+        </tr>--%>
         <tr>
             <td class="style2">
                 &nbsp;</td>
