@@ -35,20 +35,31 @@ namespace OnlineTicketSystem.Azure
         }
         protected void Btnsign_Click(object sender, EventArgs e)
         {
-            User user = _dbContext.GetUser(txtbxusr.Text, Txtbxpswd.Text);
-            if (user != null)
+            try
             {
-                Session["user"] = user;
-                Session["uid"] = user.UserName;
-                Session["Rolekey"]=user.RoleKey;
-                _dbContext.InsertUserLog(user.UserKey, HttpContext.Current.Session.SessionID);
-                Response.Redirect("UserHome.aspx");
+                User user = _dbContext.GetUser(txtbxusr.Text, Txtbxpswd.Text);
+                if (user != null)
+                {
+                    Session["user"] = user;
+                    Session["uid"] = user.UserName;
+                    Session["Rolekey"] = user.RoleKey;
+                    //_dbContext.InsertUserLog(user.UserKey, Session.SessionID);
+                    
+                    Response.Redirect("../Pages/UserHome.aspx");
+                }
+                else
+                {
+                    label1.Text = "Invalid Username or Password !";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                label1.Text = "Invalid Username or Password !";
+                Response.Write(ex.Message);
+                if (ex.InnerException != null)
+                {
+                    Response.Write(ex.InnerException.Message);
+                }
             }
-
             //String str = "select count(Username )from UserLogin where Username='" + txtbxusr.Text + "'and Password='" + Txtbxpswd.Text + "'";
 
             //SqlCommand cmd = new SqlCommand(str, con);
@@ -83,7 +94,7 @@ namespace OnlineTicketSystem.Azure
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Create.aspx");
+            Response.Redirect("../Pages/Create.aspx");
 
         }
     }

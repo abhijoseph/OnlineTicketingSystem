@@ -45,8 +45,10 @@ namespace OnlineTicketingSystem.Azure.UserControls
 
         protected void linkLogout_Click(object sender, EventArgs e)
         {
+            Session["user"] = null;
             Session["uid"] = null;
-            Response.Redirect("/Login.aspx");
+            Session["Rolekey"] = null;
+            Response.Redirect("../Pages/Login.aspx");
         }
     }
 }
