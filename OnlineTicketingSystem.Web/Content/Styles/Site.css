@@ -82,8 +82,9 @@ table {
     border-radius: 10px;
     padding: 10px;
 
-    height: 22px;
-    width: 58%;
+    height: 217px;
+    width: 88%;
+    margin-bottom: 0px;
 }
 
 table td {
