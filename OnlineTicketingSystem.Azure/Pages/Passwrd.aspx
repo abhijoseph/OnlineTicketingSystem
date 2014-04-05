@@ -5,9 +5,9 @@
         <span class="style4">Password Recovery</span></div>
     <table class="style1">
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 <asp:Panel ID="Panel1" runat="server" Height="264px" style="margin-top: 0px" 
                     Width="465px">
                     <asp:Label ID="LblName" runat="server" Text="Username"></asp:Label>
@@ -35,73 +35,73 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>

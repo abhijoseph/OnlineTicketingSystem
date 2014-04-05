@@ -4,7 +4,7 @@
   
     <table class="style1">
         <tr>
-            <td class="style2">
+            <td>
                 <ul>
                     <li>
                         <asp:LinkButton ID="LinkUpdateMovieDetails" runat="server" ForeColor="#333333" 
@@ -16,7 +16,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <ul>
                     <li>
                         <asp:LinkButton ID="LinkChangePassword" runat="server" BorderColor="Black" 
@@ -28,13 +28,13 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>

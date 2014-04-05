@@ -51,14 +51,14 @@
             Theater Registration<br />
         </caption>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="LblThetr" runat="server" Text="Theater Name"></asp:Label>
             </td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="Txtbxthetrnm" runat="server" 
                     ontextchanged="Txtbxthetrnm_TextChanged"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
@@ -69,13 +69,13 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 Theater Code</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="Txtbxthetrcd" runat="server" 
                     ontextchanged="Txtbxthetrcd_TextChanged"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
@@ -86,14 +86,14 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label1" runat="server" Text="UserName"></asp:Label>
             </td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="txtusername" ErrorMessage="Enter Id" 
@@ -103,14 +103,14 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
             </td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="Txtthtrpd" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ControlToValidate="Txtthtrpd" ErrorMessage="Enter Password" 
@@ -125,14 +125,14 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label3" runat="server" Text="Confirm"></asp:Label>
             </td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="Txtthetrcf" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" 
                     ControlToCompare="Txtthtrpd" ControlToValidate="Txtthetrcf" 
@@ -142,13 +142,13 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 EmaiId</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="TxtthtrEml" runat="server"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                     ControlToValidate="TxtthtrEml" ErrorMessage="eg: rahul@sample.com" 
@@ -159,7 +159,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label4" runat="server" Text="City"></asp:Label>
 &nbsp;
                 <asp:DropDownList ID="Ddlcity" runat="server" Width="149px" 
@@ -187,14 +187,14 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label6" runat="server" Text="Seating Capacity"></asp:Label>
 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="Txtcap" runat="server" Height="21px" Width="79px" 
                     ontextchanged="Txtcap_TextChanged"></asp:TextBox>
             </td>
@@ -202,36 +202,36 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label7" runat="server" Text="(Rgistration Card Copy)"></asp:Label>
 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style5">
+            <tdOnlineTicketSystem.Azure>
                 <asp:FileUpload ID="FileUpload1" runat="server" 
                     ondatabinding="FileUpload1_DataBinding" />
                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
                     onclick="LinkButton1_Click">Upload</asp:LinkButton>
             </td>
-            <td class="style6">
+            <tdOnlineTicketSystem.Azure>
                 </td>
         </tr>
         <tr>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td class="style4">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Image ID="Image1" runat="server" DescriptionUrl="~/ThetrReg.aspx" 
                     Height="183px" Width="245px" />
                 <asp:Label ID="Label8" runat="server" style="color: #FF0000"></asp:Label>
@@ -240,13 +240,13 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                 &nbsp;<asp:Button ID="Btsub" runat="server" onclick="Btsub_Click" 
                     Text="Submit" />
@@ -256,7 +256,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>

@@ -1,44 +1,58 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetLatestMovies.aspx.cs"  MasterPageFile="~/Pages/Web.Master" Inherits="OnlineTicketSystem.Azure.GetLatestMovies" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-  
+  <h3>Latest Movies</h3>
     <asp:Repeater ID="eNewsRepeater" runat="server" >
+        
         <HeaderTemplate>
-            <table >
-            <tr style="background-color:Silver; color:White; margin:5px">
-                <td colspan="5">
-                    <span>Latest Movies</span>
-                </td>
-            </tr>
+            <div class="row">
             </HeaderTemplate>
       
             <ItemTemplate>
-
-            
-            <tr class="news-heading">
-                <th rowspan="2">
-                    <asp:Label ID="lblMovieName" runat="server" Text='<%#Eval("MovieName") %>'/>
-                </th>
                 
-            </tr>
-            <tr>
-                <td>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Eval("Actor") %>'/>
-                </td>
-                <td>
+            <div class="col-md-4">
+                <div class="movie-item">
+                <h4>
+                    <asp:Label ID="lblMovieName" runat="server" Text='<%#Eval("MovieName") %>'/>
+                    </h4>
+                <div class="col-sm-2">
+                <img src="../Images/Movie.png" style="width:100px"/>
+                    </div>  
+                <div class="col-sm-10">
+                    <dl class="dl-horizontal">
+                        
+                        <dt>Star Cast</dt>
+                        
+                        
+                        <dd>
+                             <asp:Label ID="Label1" runat="server" Text='<%#Eval("Actor") %>'/>,&nbsp;
+               
                     <asp:Label ID="lblActress" runat="server" Text='<%#Eval("Actress") %>'/>
-                </td>
-                <td>
-                    <asp:Label ID="LblDirector" runat="server" Text='<%#Eval("Director") %>'/>
-                </td>
-                 <td>
-                    <asp:Label ID="LblLanguage" runat="server" Text='<%#Eval("Language") %>'/>
-                </td>
-            </tr>
+                        </dd>
+                        <dt>
+                            Director
+                        </dt>
+                        <dd>
+                            <asp:Label ID="LblDirector" runat="server" Text='<%#Eval("Director") %>'/>
+                        </dd>
+                        <dt>
+                            Language
+                        </dt>
+                        <dd>
+                            <asp:Label ID="LblLanguage" runat="server" Text='<%#Eval("Language") %>'/>
+                        </dd>
+                    </dl>
+                    </div>
+                       <a class="btn btn-info pull-right">Review</a>
+                
+                    
+                </div>
+                    
+               </div>
             
             </ItemTemplate>
             <FooterTemplate>
-            </table>
+                </div>
             </FooterTemplate>
     </asp:Repeater>
   

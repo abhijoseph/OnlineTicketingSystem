@@ -6,7 +6,7 @@
 <head runat ="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My ASP.NET Application</title>
+    <title>Online Ticketing System</title>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'/>
     <link rel="Stylesheet" href="../Content/bootstrap.css" />
     <link rel="Stylesheet" href="../Content/Site.css" />
@@ -34,7 +34,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="UserHome.aspx">Home</a></li>
+                    <li><a href="UserHome.aspx"><i class="icon-white icon-home"></i>Home</a></li>
 		            <li><a href="Enews.aspx">Entertainment News</a></li>
 		            <li><a href="GetLatestMovies.aspx">Latest Movies</a></li>
 		            <%--latestmovie.aspx--%>
@@ -52,7 +52,7 @@
             
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; 2014 - Online Ticket System</p>
         </footer>
     </div>
         </form>

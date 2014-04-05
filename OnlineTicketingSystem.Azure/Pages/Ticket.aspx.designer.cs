@@ -220,15 +220,6 @@ namespace OnlineTicketSystem.Azure {
         protected global::System.Web.UI.WebControls.Button btnGetSeats;
         
         /// <summary>
-        /// Btnselect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btnselect;
-        
-        /// <summary>
         /// seatSelectionGrid control.
         /// </summary>
         /// <remarks>

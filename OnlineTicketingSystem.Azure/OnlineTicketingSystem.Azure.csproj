@@ -368,6 +368,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\buy-movie-tickets.jpg" />
+    <Content Include="Images\buy-movie-tickets.png" />
+    <Content Include="Images\Movie.png" />
     <Content Include="Images\onlineticketing-logo.png" />
     <None Include="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

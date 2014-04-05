@@ -7,7 +7,7 @@
     <table class="style1">
        
         <tr>
-            <td class="style5">
+            <tdOnlineTicketSystem.Azure>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:onlineticketConnectionString %>" 
                     SelectCommand="SELECT [Firstname], [Emailid] FROM [UserReg]" 
@@ -45,7 +45,7 @@
                     SelectCommand="SELECT [TheaterName], [TheaterCode] FROM [register]">
                 </asp:SqlDataSource>
             </td>
-            <td class="style3">
+            <td>
             </td>
         </tr>
         

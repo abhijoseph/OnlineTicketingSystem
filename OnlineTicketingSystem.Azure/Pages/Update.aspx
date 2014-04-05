@@ -6,7 +6,7 @@
 
     <table class="style1">
         <tr>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
             <td class="style4">
                 Change Password</td>
@@ -15,7 +15,7 @@
         </tr>
       
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:Label ID="Label1" runat="server" style="font-weight: 700" 
@@ -25,7 +25,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:TextBox ID="TxtbxPsd" runat="server" TextMode="Password"></asp:TextBox>
@@ -41,7 +41,7 @@
         </tr>
         
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:Label ID="Label2" runat="server" style="font-weight: 700" 
@@ -51,7 +51,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:TextBox ID="txtbxpwd" runat="server" TextMode="Password"></asp:TextBox>
@@ -63,7 +63,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:Label ID="Label4" runat="server" style="color: #999999" 
@@ -73,7 +73,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:Label ID="Label3" runat="server" style="font-weight: 700" 
@@ -83,7 +83,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:TextBox ID="Txtbxretype" runat="server" TextMode="Password"></asp:TextBox>
@@ -99,7 +99,7 @@
         </tr>
         
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
             <td>
                 <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 

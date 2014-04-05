@@ -27,44 +27,44 @@
     </div>
     <table class="style1">
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
                 <asp:Label ID="LblMovie" runat="server" Text="Enter Movie"></asp:Label>
             </td>
-            <td class="style3">
+            <td>
                 <asp:TextBox ID="TextMovie" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ErrorMessage="Enter Movie Name" ControlToValidate="TextMovie"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="LblDetails" runat="server" Text="Movie Details"></asp:Label>
             </td>
-            <td class="style3">
+            <td>
                 <asp:TextBox ID="TextDetails" runat="server" 
                     ontextchanged="txtbxdetails_TextChanged"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -72,83 +72,83 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="LblImage" runat="server">Movie Still</asp:Label>
             </td>
-            <td class="style3">
+            <td>
                 <asp:Image ID="ImageImg" runat="server" Height="229px" Width="242px" />
                 <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Upload</asp:LinkButton>
                 <asp:Label ID="Lbl" runat="server" ForeColor="#33CC33" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
                 <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 
                     style="height: 26px" Text="Submit" />
                 <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style3">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style3">
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
                 &nbsp;</td>
         </tr>
     </table>

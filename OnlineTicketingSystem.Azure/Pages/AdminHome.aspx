@@ -2,14 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 
 <h3>Site Administration</h3>
-<div id="admin-ctrl">
-        <ul class="big-menu-list">
+<div class="row">  
+<div class="span8"> 
+        <ul class="nav nav-tabs nav-stacked">
             <li><a href= "InsertFilmReview.aspx">Write Movie Review</a></li>
             <li><a href="InsertEnews.aspx">Write E-News</a></li>
             <li><a href="latestmovie.aspx">Add Latest Movies</a></li>
             <li><a href= "UserDisp.aspx">Edit User</a></li>
-            <li>Edit Theater</li>
+            <li><a href="#">Edit Theater</a></li>
         </ul>
+</div>
     </div>
 
 

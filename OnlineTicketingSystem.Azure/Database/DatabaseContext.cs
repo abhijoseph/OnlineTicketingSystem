@@ -44,6 +44,7 @@ namespace OnlineTicketSystem.Azure.Database
             while (reader.Read())
             {
                 user = new User();
+                user.UserKey = DBNull.Value == reader["UserKey"] ? -1 : Convert.ToInt32(reader["UserKey"]);
                 user.FirstName = DBNull.Value == reader["FirstName"] ? string.Empty : reader["FirstName"].ToString();
                 user.LastName = DBNull.Value == reader["LastName"] ? string.Empty : reader["LastName"].ToString();
                 user.EmailId = DBNull.Value == reader["EmailId"] ? string.Empty : reader["EmailId"].ToString();
@@ -221,13 +222,21 @@ namespace OnlineTicketSystem.Azure.Database
             parameters[3] = new SqlParameter("@Seats", SqlDbType.VarChar, 500);
             parameters[3].Direction = ParameterDirection.Output;
             seatOut.Direction = ParameterDirection.Output;
-            int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, CommandType.StoredProcedure, "dbo.usp_getBookedSeatsforMovieTheater", parameters);
+            SqlDataReader reader = SqlHelper.ExecuteReader(_sqlConnection, CommandType.StoredProcedure, "dbo.usp_getBookedSeatsforMovieTheater", parameters);
+
+            while (reader.Read())
+            {
+                seats = seats + "," + Convert.ToString(reader["Seat"]);
+            }
             //int ret = SqlHelper.ExecuteNonQuery(_sqlConnection, CommandType.StoredProcedure, "dbo.usp_getBookedSeats",
             //    new SqlParameter("@TheaterKey", SqlDbType.Int).Value = theaterKey,
             //    new SqlParameter("@ShowTimeKey", SqlDbType.Int).Value = showTimeKey,
             //    new SqlParameter("@DateKey", SqlDbType.Int).Value = dateKey,
             //    seats);
-            return parameters[3].Value == DBNull.Value ? string.Empty : parameters[3].Value as string;
+            reader.Close();
+            reader.Dispose();
+            return seats;
+            //return parameters[3].Value == DBNull.Value ? string.Empty : parameters[3].Value as string;
         }
 
         public string GetBookedSeatsforUserforMovieTheater(int theaterKey, int showTimeKey, int dateKey, int userKey)

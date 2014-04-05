@@ -13,6 +13,15 @@ namespace OnlineTicketSystem.Azure {
     public partial class Web {
         
         /// <summary>
+        /// head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace OnlineTicketSystem.Azure {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::OnlineTicketingSystem.Azure.UserControls.UserStatusCtrl UserStatusCtrl1;
-        
-        /// <summary>
-        /// head control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
         /// mainContentPlaceHolder control.

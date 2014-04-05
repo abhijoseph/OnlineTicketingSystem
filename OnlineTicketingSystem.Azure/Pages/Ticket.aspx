@@ -80,26 +80,16 @@
         EnableScriptLocalization="true" ID="ToolkitScriptManager1" CombineScripts="false" />
 <asp:HiddenField runat="server" ID="hiddenSeatMatrix" />
 <asp:HiddenField runat="server" ID="hiddenMySeats" />
-    <table class="style1">
+    <h3>Book Movie Ticket</h3>
+    <table>
+        
         <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style5">
-                Book&nbsp; Ticket</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Lblcity" runat="server" Text=" City"></asp:Label>
             </td>
-            <td class="style6">
-                <asp:DropDownList ID="Ddlcity" runat="server" Height="20px" 
-                    onselectedindexchanged="DropDownList1_SelectedIndexChanged" Width="135px" 
+            <td>
+                <asp:DropDownList ID="Ddlcity" runat="server" 
+                    onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
                     AutoPostBack="True">
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="RfCity" runat="server" 
@@ -107,17 +97,17 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Lbltheater" runat="server" Text="Theater"></asp:Label>
             </td>
-            <td class="style6">
-                <asp:DropDownList ID="Ddltheater" runat="server" Height="32px" Width="135px" 
+            <td>
+                <asp:DropDownList ID="Ddltheater" runat="server" 
                     onselectedindexchanged="Ddltheater_SelectedIndexChanged" 
                     AutoPostBack="True">
                 </asp:DropDownList>
@@ -126,17 +116,17 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Lbllanguage" runat="server" Text="Language"></asp:Label>
             </td>
-            <td class="style6">
-                <asp:DropDownList ID="Ddllanguage" runat="server" Height="25px" Width="134px" 
+            <td>
+                <asp:DropDownList ID="Ddllanguage" runat="server"
                     onselectedindexchanged="Ddllanguage_SelectedIndexChanged" 
                     AutoPostBack="True">
                     <asp:ListItem Value="Hindi"></asp:ListItem>
@@ -150,17 +140,17 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Lblmovie" runat="server" Text="Movie"></asp:Label>
             </td>
-            <td class="style6">
-                <asp:DropDownList ID="Ddlmovie" runat="server" Height="18px" Width="133px" 
+            <td>
+                <asp:DropDownList ID="Ddlmovie" runat="server"
                     onselectedindexchanged="Ddlmovie_SelectedIndexChanged">
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="Rfmovie" runat="server" 
@@ -168,16 +158,16 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Lbldate" runat="server" Text="Date"></asp:Label>
             </td>
-            <td class="style6">
+            <td>
                <%-- <asp:TextBox ID="Txtbxdate" runat="server" style="text-align: center"></asp:TextBox>--%>
                 
                 <asp:TextBox runat="server" ID="txtDate" />
@@ -187,17 +177,17 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Lbltime" runat="server" Text="Time"></asp:Label>
             </td>
-            <td class="style6">
-                <asp:DropDownList ID="Ddltime" runat="server" Height="17px" Width="132px">
+            <td>
+                <asp:DropDownList ID="Ddltime" runat="server" >
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="Rftime" runat="server" 
                     ErrorMessage="Select time" ControlToValidate="Ddltime"></asp:RequiredFieldValidator>
@@ -205,37 +195,37 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
+            <td>
                 &nbsp;</td>
         </tr>
         <%--<tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="lblseat" runat="server" Text="No:of  Seats"></asp:Label>
             </td>
-            <td class="style6">
+            <td>
                 <asp:TextBox ID="Txtbxseat" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="seat" runat="server" 
                     ErrorMessage="Enter no:of seats" ControlToValidate="Txtbxseat"></asp:RequiredFieldValidator>
             </td>
         </tr>--%>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
-                <asp:Button ID="btnGetSeats" runat="server" onclick="btnGetSeats_Click" 
+            <td>
+                <asp:Button ID="btnGetSeats" runat="server" onclick="btnGetSeats_Click" class="btn btn-info"
                     Text="Get Seats" CausesValidation="False" />
             </td>
         </tr>
         <tr>
-            <td class="style2">
-                <asp:Button ID="Btnselect" runat="server" Text="Select your seat" 
-                    onclick="Btnselect_Click" />
+            <td>
+                <%--<asp:Button ID="Btnselect" runat="server" Text="Select your seat" 
+                    onclick="Btnselect_Click" />--%>
             </td>
-            <td class="style6">
+            <td>
                 <asp:GridView ID="seatSelectionGrid" runat="server" class="seatselection-grid" CellPadding="1" CellSpacing="1"
-                    Height="172px" Visible="True" onrowdatabound="GridView1_RowDataBound">
+                     Visible="True" onrowdatabound="GridView1_RowDataBound">
                 </asp:GridView>
                 <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                     onselecting="SqlDataSource1_Selecting"></asp:SqlDataSource>--%>
@@ -243,10 +233,10 @@
         </tr>
 
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
-            <td class="style6">
-               <asp:Button ID="BtCnfirm" runat="server" Text="Confirm" 
+            <td>
+               <asp:Button ID="BtCnfirm" runat="server" Text="Confirm" class="btn btn-primary"
                   OnClientClick="javascript:setSeatMatrix();"  onclick="BtCnfirm_Click" CausesValidation="False" />
             </td>
         </tr>

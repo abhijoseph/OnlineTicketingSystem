@@ -23,7 +23,11 @@ namespace OnlineTicketSystem.Azure
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!Page.IsPostBack)
+            {
+                TextPostedOn.Text = DateTime.Now.Date.ToShortDateString();
+                TextPostedOn.Enabled = false;
+            }
         }
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)

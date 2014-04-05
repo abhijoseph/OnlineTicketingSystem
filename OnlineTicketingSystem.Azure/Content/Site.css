@@ -2,6 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     font-family: 'PT Sans Narrow', Calibri;
+    font-size: 1.8em;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -11,11 +12,11 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 /* styles for validation helpers */
 .field-validation-error {
@@ -65,13 +66,17 @@ background-color: rgb(247, 247, 247);*/
 
 .news-description 
 {
-    background-color: rgb(226, 223, 223);
-    padding: 30px;
+   
 }
+
 .news-heading
 {
-    font-size: 24px;
+    font-size: 22px;
     text-align: left;
+}
+
+.border-row {
+    border-bottom: 1px solid #ccc;
 }
 
 /*Seat Selection Styles*/
@@ -113,4 +118,18 @@ background-color: rgb(247, 247, 247);*/
 .seat-notavailable:hover {
     background-color: #b7b7b7;
     color:Gray;
+}
+
+.movie-item {
+    background-color: #fdfdfd;
+    border:solid 1px #ccc;
+    border-radius:5px;
+    padding: 8px;
+    display: inline-block;
+}
+
+.movie-item:hover {
+    background-color: #fafafa;
+    border:solid 1px #ccc;
+    border-radius:5px;
 }

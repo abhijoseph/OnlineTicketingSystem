@@ -1,44 +1,38 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Azure.Enews" MasterPageFile="~/Pages/Web.Master" Codebehind="Enews.aspx.cs" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-  <div>
-    <asp:Repeater ID="eNewsRepeater" runat="server" 
-        >
-        <HeaderTemplate>
-            <table>
-            <tr style="background-color:Silver ; color:White; margin:5px">
-                <td colspan="2">
-                    <span>Latest Entertainment News</span>
-                </td>
-            </tr>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Azure.Enews" MasterPageFile="~/Pages/Web.Master" CodeBehind="Enews.aspx.cs" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" runat="Server">
+    <div>
+        <h3>Entertainment News</h3>
+        <asp:Repeater ID="eNewsRepeater" runat="server">
+            <HeaderTemplate>
             </HeaderTemplate>
             <ItemTemplate>
-            
-            <tr class="news-heading">
-                <td colspan="2">
-                    <asp:Label ID="lblNewsHeading" runat="server" Text='<%#Eval("Heading") %>'/>
-                </td>
-            </tr>
+                <div class="row">
+                    <div class="col-sm-10 news-heading">
+
+                        <asp:Label ID="lblNewsHeading" runat="server" Text='<%#Eval("Heading") %>' />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <asp:Label ID="lblPostedBy" class="text-info" runat="server" Text='<%#Eval("PostedBy") %>' />
+                    </div>
+                    <div class="col-lg-4">
+                        <asp:Label ID="lblPostedOn" class="text-info" runat="server" Text='<%#Eval("PostedOn") %>' />
+                    </div>
+                </div>
+                <div class="row border-row">
+                <div class="col-sm-10 news-description">
+
+                    <asp:Label ID="LblNewsDescription" runat="server" Text='<%#Eval("Description") %>' />
+                </div>
+</div>
+                
+
                     
-            <tr>
-             <td>
-             <asp:Label ID="lblPostedBy" runat="server" Text='<%#Eval("PostedBy") %>'/>
-             </td>
-             <td>
-             <asp:Label ID="lblPostedOn" runat="server" Text='<%#Eval("PostedOn") %>'/>
-             </td>
-            
-            </tr>
-            <tr class="news-description">
-                <td colspan="2">
-                    <asp:Label ID="LblNewsDescription" runat="server" Text='<%#Eval("Description") %>'/>
-                </td>
-            </tr>
-          
-            
             </ItemTemplate>
             <FooterTemplate>
-            </table>
             </FooterTemplate>
-    </asp:Repeater>
-</div>
+        </asp:Repeater>
+    </div>
 </asp:Content>

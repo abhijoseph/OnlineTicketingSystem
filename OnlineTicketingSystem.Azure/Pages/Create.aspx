@@ -2,16 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     
     <table class="style1">
-        <caption class="style3">
+        <caption>
             Registration</caption>
 
         <tr>
-            <td class="style2" >
+            <td >
                 <asp:Label ID="LblFirst" runat="server" 
                     Text="First  Name   "></asp:Label>
             </td>
         
-            <td id="LblFisrt" class="style2">
+            <td id="LblFisrt">
                 <asp:TextBox ID="TxtbxFirst" runat="server" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ControlToValidate="TxtbxFirst" ErrorMessage="Enter username" 
@@ -20,13 +20,13 @@
         </tr>
         
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="LblLast" runat="server" 
                     style="font-size: medium; " 
                     Text="Last Name"></asp:Label>
             </td>
         
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="TxtBxLast" runat="server" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ControlToValidate="TxtBxLast" ErrorMessage="Enter Last name" 
@@ -34,22 +34,22 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label13" runat="server" Text="UserName"></asp:Label>
             </td>
         
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="TextBxUsername" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="LblId" runat="server" 
                     style="font-size: medium; " 
                     Text="Email ID"></asp:Label>
             </td>
         
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="TxtEid" runat="server" Width="126px"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                     ControlToValidate="TxtEid" ErrorMessage="eg: rahul@mail.com" ForeColor="Gray" 
@@ -58,7 +58,7 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label4" runat="server" 
                     style="font-size: medium; ">Password</asp:Label>
                 <asp:Label ID="Label10" runat="server" ForeColor="#999999" 
@@ -79,13 +79,13 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label5" runat="server" 
                     style="font-size: medium; " 
                     Text="Re-Enter"></asp:Label>
             </td>
         
-            <td class="style2">
+            <td>
                 <asp:TextBox ID="TextBxrenter" runat="server" TextMode="Password" ></asp:TextBox>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" 
                     ControlToCompare="TxtBxpswd" ControlToValidate="TextBxrenter" 
@@ -93,13 +93,13 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label6" runat="server" 
                     style="font-size: medium; " 
                     Text="Date Of Birth"></asp:Label>
             </td>
        
-            <td class="style2">
+            <td>
                 <asp:Label ID="Label7" runat="server" 
                     style="font-size: medium;" Text="Date         "></asp:Label>
                 <asp:DropDownList ID="Ddldate" runat="server" >
@@ -129,17 +129,17 @@
             </td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 &nbsp;</td>
         
-            <td class="style2">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style2">
+            <td>
                 </td>
         
-            <td class="style2">
+            <td>
                 <asp:Button ID="Btregister" runat="server" Font-Bold="True" Height="22px" Text="Register" 
                     Width="96px" onclick="Btregister_Click"/>
                 <asp:Label ID="Label11" runat="server" ForeColor="#009900" 

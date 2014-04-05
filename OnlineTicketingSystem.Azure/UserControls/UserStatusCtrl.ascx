@@ -1,11 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserStatusCtrl.ascx.cs" Inherits="OnlineTicketingSystem.Azure.UserControls.UserStatusCtrl" %>
 
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav nav-list">
         <li id="divMyaccount" runat="server">
-            <a href="../Pages/MyAccount.aspx">My Account</a>
+            <a href="../Pages/MyAccount.aspx"><i class="icon-user"></i>My Account</a>
         </li>
         <li id="divAdmin" runat="server">
-            <a href="../Pages/AdminHome.aspx">Site Administration</a>
+            <a href="../Pages/AdminHome.aspx"><i class="icon-cog"></i>Site Administration</a>
         </li>
         <li id="divAddMovie" runat="server">
             <a href="../Pages/AdminHome.aspx">Add Movie</a>

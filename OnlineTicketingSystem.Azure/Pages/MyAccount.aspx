@@ -2,7 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 <h3>My Account</h3>
-<ul class=big-menu-list>
+    
+<div class="row">  
+<div class="span8"> 
+<ul class="nav nav-tabs nav-stacked">  
     <li>
         <a href= "EditUser.aspx">Edit Info</a>
     </li>
@@ -11,4 +14,7 @@
     </li>
     <li><a href="Ticket.aspx">Book Ticket</a></li>
 </ul>
+    </div>
+    </div>
+ 
 </asp:Content>

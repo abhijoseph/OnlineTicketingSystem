@@ -1,53 +1,46 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Pages/Web.Master"  CodeBehind="InsertFilmReview.aspx.cs" Inherits="OnlineTicketSystem.Azure.InsertFilmReview" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Pages/Web.Master" CodeBehind="InsertFilmReview.aspx.cs" Inherits="OnlineTicketSystem.Azure.InsertFilmReview" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-
-
+<asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" runat="Server">
 
 
-    <table class="style7">
-        <tr>
-            <td style="text-align: center">
+    <h3>Add Film Review</h3>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-xs-3">
                 <asp:Label ID="LblMovieName" runat="server" Text="MovieName"></asp:Label>
 
-            </td>
-            <td>
-
-                <asp:DropDownList ID="DdlMovieName" runat="server" Height="18px" 
-                    onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
-                    style="margin-left: 0px" Width="121px">
+            </div>
+            <div class="col-xs-3">
+                <asp:DropDownList ID="DdlMovieName" runat="server" class="form-control"
+                    OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
-               
-                <asp:RequiredFieldValidator ID="RFVMovieName" runat="server" 
-                    ControlToValidate="DdlMovieName" ErrorMessage="Select MovieName"></asp:RequiredFieldValidator>
-                </td>
-        </tr>
-        <tr>
-            <td>
-                    
-<asp:Label ID="LblReview" runat="server" Text="Review"></asp:Label>
-               
-            </td>
-            <td>
-               
-<asp:TextBox ID="TextReview" runat="server" 
-                    ontextchanged="TextReview_TextChanged" style="margin-left: 0px"></asp:TextBox>
-               
-                <asp:RequiredFieldValidator ID="RFVReview" runat="server" 
-                    ControlToValidate="TextReview" ErrorMessage="Enter Review"></asp:RequiredFieldValidator>
+            </div>
+            <asp:RequiredFieldValidator ID="RFVMovieName" runat="server" class="text-warning"
+                ControlToValidate="DdlMovieName" ErrorMessage="Select MovieName"></asp:RequiredFieldValidator>
+        </div>
 
-            </td>
-        </tr>
-        <tr>
-            <td>
-            
-                &nbsp;</td>
-            <td>
-            
-                <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" 
-                    onclick="ButtonSubmit_Click" />
-                <asp:Label ID="Lblstatus" runat="server" ForeColor="#00CC00"></asp:Label>
-                </td>
-        </tr>
-       </table>
+    <div class="form-group">
+        <div class="col-xs-3">
+            <asp:Label ID="LblReview" runat="server" Text="Review"></asp:Label>
+        </div>
+        <div class="col-xs-6">
+
+            <asp:TextBox ID="TextReview" runat="server" TextMode="MultiLine" Columns="100" Rows="10" class="form-control"
+                OnTextChanged="TextReview_TextChanged"></asp:TextBox>
+        </div>
+        <asp:RequiredFieldValidator ID="RFVReview" runat="server"
+            ControlToValidate="TextReview" ErrorMessage="Enter Review" class="text-warning"></asp:RequiredFieldValidator>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-3">
+        </div>
+
+        <div class="col-xs-3">
+            <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" class="btn btn-primary"
+                OnClick="ButtonSubmit_Click" />
+        </div>
+        <asp:Label ID="Lblstatus" runat="server" class="text-info"></asp:Label>
+    </div>
+            </div>
 </asp:Content>
