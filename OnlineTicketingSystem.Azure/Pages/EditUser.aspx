@@ -1,71 +1,70 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" MasterPageFile="~/Pages/Web.Master" Inherits="OnlineTicketSystem.Azure.EditUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     
-    <table class="style1">
-        <caption>
-            Edit User</caption>
+    <h3>Edit User</h3>
 
-        <tr>
-            <td >
+        <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Label ID="LblFirst" runat="server" 
                     Text="First  Name   "></asp:Label>
-            </td>
+            </div>
+            <div class="col-xs-3">
         
-            <td id="LblFisrt">
+            
                 <asp:TextBox ID="TxtbxFirst" runat="server" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ControlToValidate="TxtbxFirst" ErrorMessage="Enter username" 
                     style="font-style: italic"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
+            </div>
+            </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Label ID="LblLast" runat="server" 
                     style="font-size: medium; " 
                     Text="Last Name"></asp:Label>
-            </td>
-        
-            <td>
+            </div>
+            <div class="col-xs-3">
                 <asp:TextBox ID="TxtBxLast" runat="server" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ControlToValidate="TxtBxLast" ErrorMessage="Enter Last name" 
                     style="font-style: italic"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
+             </div>
+            </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Label ID="Label13" runat="server" Text="UserName"></asp:Label>
-            </td>
-        
-            <td>
+            </div>
+            <div class="col-xs-3">
                 <asp:TextBox ID="TextBxUsername" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Label ID="LblId" runat="server" 
                     style="font-size: medium; " 
                     Text="Email ID"></asp:Label>
-            </td>
-        
-            <td>
+           </div>
+            <div class="col-xs-3">
                 <asp:TextBox ID="TxtEid" runat="server" Width="126px"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                     ControlToValidate="TxtEid" ErrorMessage="eg: rahul@mail.com" ForeColor="Gray" 
                     style="font-style: italic" 
                     ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+            </div>
+            </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Label ID="Label4" runat="server" 
                     style="font-size: medium; ">Password</asp:Label>
                 <asp:Label ID="Label10" runat="server" ForeColor="#999999" 
                     style="font-style: italic" Text="(6 to 15 charecter)"></asp:Label>
-            </td>
-        
-            <td class="style4">
+           </div>
+            <div class="col-xs-3">
                 <asp:TextBox ID="TxtBxpswd" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="TxtBxpswd" ErrorMessage="Enter password" 
@@ -75,32 +74,31 @@
                     ControlToValidate="TxtBxpswd" 
                     ErrorMessage="(Character must be between 6 and 15)" style="font-style: italic" 
                     ValidationExpression="\w{6,15}"></asp:RegularExpressionValidator>
-                <br />
-            </td>
-        </tr>
-        <tr>
-            <td>
+               </div>
+        </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Label ID="Label5" runat="server" 
                     style="font-size: medium; " 
                     Text="Re-Enter"></asp:Label>
-            </td>
-        
-            <td>
+           </div>
+            <div class="col-xs-3">
                 <asp:TextBox ID="TextBxrenter" runat="server" TextMode="Password" 
                     ></asp:TextBox>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" 
                     ControlToCompare="TxtBxpswd" ControlToValidate="TextBxrenter" 
                     ErrorMessage="Not Matching" style="font-style: italic"></asp:CompareValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
+           </div>
+            </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Label ID="Label6" runat="server" 
                     style="font-size: medium; " 
                     Text="Date Of Birth"></asp:Label>
-            </td>
-       
-            <td>
+           </div>
+            <div class="col-xs-3">
                 <asp:Label ID="Label7" runat="server" 
                     style="font-size: medium;" Text="Date         "></asp:Label>
                 <asp:DropDownList ID="Ddldate" runat="server" >
@@ -127,13 +125,13 @@
                     <asp:ListItem></asp:ListItem>
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Select Role</td>
-        
-            <td>
+             </div>
+            </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
+                Select Role</div>
+            <div class="col-xs-3">
                 <asp:DropDownList ID="ddlRoles" runat="server">
                     <asp:ListItem Value="SelectRole"></asp:ListItem>
                     <asp:ListItem Value="TheaterOwner"></asp:ListItem>
@@ -142,21 +140,19 @@
                     <asp:ListItem></asp:ListItem>
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                </td>
-        
-            <td>
+            </div>
+        <div class="divider dl-horizontal"></div>
+        <div class="form-group">
+            <div class="col-xs-2">
                 <asp:Button ID="btnUpdate" runat="server" Font-Bold="True" Height="22px" Text="Submit" 
                     Width="96px"  onclick="btnUpdate_Click"/>
                 <asp:Label ID="Label11" runat="server" ForeColor="#009900" 
                     style="font-style: italic; font-weight: 700"></asp:Label>
-            </td>
-        </tr>
-    </table>
+           </div>
+            <div class="col-xs-3">
 
-<p>
-    &nbsp;</p>
+            </div>
+        </div>
+    </div>
+</div>
 </asp:Content>

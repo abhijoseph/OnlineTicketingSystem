@@ -3,15 +3,24 @@
 
 <h3>Site Administration</h3>
 <div class="row">  
-<div class="span8"> 
+<div id="adminDiv" class="span8" runat="server"> 
         <ul class="nav nav-tabs nav-stacked">
             <li><a href= "InsertFilmReview.aspx">Write Movie Review</a></li>
             <li><a href="InsertEnews.aspx">Write E-News</a></li>
             <li><a href="latestmovie.aspx">Add Latest Movies</a></li>
             <li><a href= "UserDisp.aspx">Edit User</a></li>
-            <li><a href="#">Edit Theater</a></li>
+            <li><a href="AddTheater.aspx">Add Theater</a></li>
         </ul>
 </div>
+    </div>
+
+    <div class="row">  
+        <div id="theaterDiv" class="span8" runat="server"> 
+                <ul class="nav nav-tabs nav-stacked">
+                    <li><a href= "MovieTheaterPage.aspx">Update Movie Theater</a></li>
+            
+                </ul>
+        </div>
     </div>
 
 

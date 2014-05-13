@@ -13,13 +13,13 @@ namespace OnlineTicketSystem.Azure {
     public partial class filmRev {
         
         /// <summary>
-        /// DdlMovie control.
+        /// ddlMovieReview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlMovie;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMovieReview;
         
         /// <summary>
         /// TextReview control.
@@ -31,12 +31,21 @@ namespace OnlineTicketSystem.Azure {
         protected global::System.Web.UI.WebControls.TextBox TextReview;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// ButtonSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
+        
+        /// <summary>
+        /// Lblstatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lblstatus;
     }
 }

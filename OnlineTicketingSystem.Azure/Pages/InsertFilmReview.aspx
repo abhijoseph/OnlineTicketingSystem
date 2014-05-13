@@ -13,7 +13,7 @@
             </div>
             <div class="col-xs-3">
                 <asp:DropDownList ID="DdlMovieName" runat="server" class="form-control"
-                    OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="true">
                 </asp:DropDownList>
             </div>
             <asp:RequiredFieldValidator ID="RFVMovieName" runat="server" class="text-warning"

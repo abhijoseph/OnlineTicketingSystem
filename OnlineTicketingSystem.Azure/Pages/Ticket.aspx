@@ -78,10 +78,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     <ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
         EnableScriptLocalization="true" ID="ToolkitScriptManager1" CombineScripts="false" />
+    <div class="row">
 <asp:HiddenField runat="server" ID="hiddenSeatMatrix" />
 <asp:HiddenField runat="server" ID="hiddenMySeats" />
+    </div>
     <h3>Book Movie Ticket</h3>
-    <table>
+    <div class="row">
+        <div class="col-lg-12">
+    <table class="row">
         
         <tr>
             <td>
@@ -170,8 +174,8 @@
             <td>
                <%-- <asp:TextBox ID="Txtbxdate" runat="server" style="text-align: center"></asp:TextBox>--%>
                 
-                <asp:TextBox runat="server" ID="txtDate" />
-                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" Format="MM/dd/yyyy" TargetControlID="txtDate" StartDate="8/3/2010" EndDate="10/7/2010" SelectedDate="8/3/2010" />
+                <asp:TextBox runat="server" ID="txtDate" EnableViewState="true"/>
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" Format="MM/dd/yyyy" TargetControlID="txtDate"  />
                 <asp:RequiredFieldValidator ID="Rfdate" runat="server" 
                     ErrorMessage="Select date" ControlToValidate="txtDate"></asp:RequiredFieldValidator>
             </td>
@@ -231,14 +235,13 @@
                     onselecting="SqlDataSource1_Selecting"></asp:SqlDataSource>--%>
             </td>
         </tr>
-
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
+        </table>
+            </div>
+        </div>
+        <div class="row">
                <asp:Button ID="BtCnfirm" runat="server" Text="Confirm" class="btn btn-primary"
                   OnClientClick="javascript:setSeatMatrix();"  onclick="BtCnfirm_Click" CausesValidation="False" />
-            </td>
-        </tr>
-    </table>
+         </div>
+    
+        
 </asp:Content>

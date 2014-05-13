@@ -6,14 +6,14 @@
 <head runat ="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Ticketing System</title>
+    <title>Moviehood - NonStop Entertainment</title>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'/>
     <link rel="Stylesheet" href="../Content/bootstrap.css" />
     <link rel="Stylesheet" href="../Content/Site.css" />
 
     <script src="../Scripts/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="../Scripts/bootstrap.js" type="text/javascript"></script>
-    
+    <script src="../Scripts/moment.js" type="text/javascript"></script>
      
 </head>
     
@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">Online Ticketing System</a>
+                <a class="navbar-brand">Moviehood - Entertainment Unlimited</a>
                 
             </div>
             <div class="navbar-collapse collapse">
@@ -38,21 +38,22 @@
 		            <li><a href="Enews.aspx">Entertainment News</a></li>
 		            <li><a href="GetLatestMovies.aspx">Latest Movies</a></li>
 		            <%--latestmovie.aspx--%>
-		            <li><a href="filmRev.aspx">Film Reviews</a></li>
+		            <li><a href="FilmReview.aspx">Film Reviews</a></li>
                 </ul>
                  <uc1:UserStatusCtrl ID="UserStatusCtrl1" runat="server" />
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="padding-bottom: 80px;">
         
         <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>
             
-        <hr />
-        <footer>
-            <p>&copy; 2014 - Online Ticket System</p>
+        
+        <footer style="color: gainsboro;" class="navbar-inverse navbar navbar-fixed-bottom">
+            <hr />
+            <p>&copy; 2014 - Moviehood Entertainment Ltd</p>
         </footer>
     </div>
         </form>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OnlineTicketSystem.Azure.Models;
+using OnlineTicketSystem.Azure.Database;
 
 namespace OnlineTicketSystem.Azure
 {
@@ -11,7 +13,18 @@ namespace OnlineTicketSystem.Azure
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null && ((User)Session["user"]).RoleKey == 3)
+            {
+                adminDiv.Visible = false;
+            }
+            //if (Session["user"] != null && ((User)Session["user"]).RoleKey == 2)
+            //{
+            //    theaterDiv.Visible = true;
+            //}
+            //else
+            //{
+            //    theaterDiv.Visible = false;
+            //}
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)

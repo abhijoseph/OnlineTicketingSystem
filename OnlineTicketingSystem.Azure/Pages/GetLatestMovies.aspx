@@ -43,7 +43,7 @@
                         </dd>
                     </dl>
                     </div>
-                       <a class="btn btn-info pull-right">Review</a>
+                       <a class="btn btn-info pull-right" href='../Pages/FilmReview.aspx?MovieId=<%#Eval("MovieKey")%>'>Review</a>
                 
                     
                 </div>

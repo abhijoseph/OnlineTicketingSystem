@@ -7,11 +7,14 @@ namespace OnlineTicketSystem.Azure.Models
 {
     public class Theater
     {
+        public int TheaterKey { get; set; }
         public string TheaterName { get; set; }
 
         public string TheaterCode { get; set; }
 
-        public string Username { get; set; }
+        public int TheaterOwnerKey { get; set; }
+
+        public string TheaterOwnerUsername { get; set; }
 
         public string Password { get; set; }
 

@@ -1,16 +1,18 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="OnlineTicketSystem.Azure.UserHome" MasterPageFile="~/Pages/Web.Master" Codebehind="UserHome.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     <div class="jumbotron">
-        <h2>Online Ticketing System</h2>
+        <h2>Moviehood Entertainment</h2>
         <div class="row">
             <div class="col-lg-5">
-            <img src="../Images/buy-movie-tickets.png" alt="Online Ticket System" style="width:400px" />
+            <img src="../Images/buy-movie-tickets.png" alt="MovieHood" style="width:400px" />
                 </div>
             
             <div class="col-lg-7">
             <p class="lead">
-            Online Ticketing application, a website dedicated to providing film buffs the inside scoop on all things Entertainment. A global media powerhouse that helps viewers get the latest reviews on movies and Entertainment news and also provides option to movie viewers to get tickets booked online.
-                
+            Moviehood, a website dedicated to providing film buffs the inside scoop on all things Entertainment. A global media powerhouse that helps viewers get the latest reviews on movies and Entertainment news and also provides option to movie viewers to get tickets booked online.
+                <asp:Button ID="registerBtn" runat="server" class="btn btn-default"
+                Text="Register" CausesValidation="False"
+                OnClick="Button1_Click" />
         </p>
                 </div>
         </div>

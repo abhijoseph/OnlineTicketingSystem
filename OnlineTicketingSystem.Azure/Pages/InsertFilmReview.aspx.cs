@@ -16,15 +16,20 @@ namespace OnlineTicketSystem.Azure
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            
+
+            if (!IsPostBack)
+            {
                 List<LatestMovies> movieslist = _dbContext.GetLatestMovies();
                 DdlMovieName.DataSource = movieslist;
                 DdlMovieName.DataTextField = "MovieName";
-                
+                DdlMovieName.DataValueField = "MovieKey";
+                DdlMovieName.SelectedIndex = 0;
                 DdlMovieName.DataBind();
-            
-            
+
+                LatestMovies movie = _dbContext.GetMovie(Convert.ToInt32(DdlMovieName.SelectedItem.Value));
+                TextReview.Text = movie.Review == string.Empty ? "Not Available" : movie.Review;
+
+            }
         }
 
         protected void TextBox4_TextChanged(object sender, EventArgs e)
@@ -37,6 +42,7 @@ namespace OnlineTicketSystem.Azure
 
             FilmReview review = new FilmReview();
             review.MovieName = DdlMovieName.SelectedItem.Text;
+            review.MovieKey  = Convert.ToInt32(DdlMovieName.SelectedItem.Value);
             review.Review = TextReview.Text;
             //review.PostedOn = TextPostedOn.Text;
             //enewsInfo.PostedBy = TextPostedBy.Text;
@@ -53,7 +59,8 @@ namespace OnlineTicketSystem.Azure
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            LatestMovies movie = _dbContext.GetMovie(Convert.ToInt32(DdlMovieName.SelectedItem.Value));
+            TextReview.Text = movie.Review == string.Empty ? "Not Available" : movie.Review;
         }
 
         protected void TextReview_TextChanged(object sender, EventArgs e)

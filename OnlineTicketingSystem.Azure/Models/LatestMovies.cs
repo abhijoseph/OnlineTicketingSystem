@@ -19,6 +19,7 @@ namespace OnlineTicketSystem.Azure.Models
 
         public string Actress { get; set; }
 
+        public string Review { get; set; }
       
     }
 }

@@ -11,5 +11,23 @@ namespace OnlineTicketSystem.Azure {
     
     
     public partial class AdminHome {
+        
+        /// <summary>
+        /// adminDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adminDiv;
+        
+        /// <summary>
+        /// theaterDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl theaterDiv;
     }
 }

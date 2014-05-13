@@ -188,12 +188,27 @@
     <Compile Include="Models\MovieTheater.cs" />
     <Compile Include="Models\theater.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRoleEnum.cs" />
+    <Compile Include="Pages\AddTheater.aspx.cs">
+      <DependentUpon>AddTheater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AddTheater.aspx.designer.cs">
+      <DependentUpon>AddTheater.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AdminHome.aspx.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CancelTickets.aspx.cs">
+      <DependentUpon>CancelTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CancelTickets.aspx.designer.cs">
+      <DependentUpon>CancelTickets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
@@ -223,12 +238,12 @@
     <Compile Include="Pages\Enews.aspx.designer.cs">
       <DependentUpon>Enews.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\filmRev.aspx.cs">
-      <DependentUpon>filmRev.aspx</DependentUpon>
+    <Compile Include="Pages\FilmReview.aspx.cs">
+      <DependentUpon>FilmReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\filmRev.aspx.designer.cs">
-      <DependentUpon>filmRev.aspx</DependentUpon>
+    <Compile Include="Pages\FilmReview.aspx.designer.cs">
+      <DependentUpon>FilmReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\GetLatestMovies.aspx.cs">
       <DependentUpon>GetLatestMovies.aspx</DependentUpon>
@@ -264,6 +279,13 @@
     </Compile>
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MovieTheaterPage.aspx.cs">
+      <DependentUpon>MovieTheaterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MovieTheaterPage.aspx.designer.cs">
+      <DependentUpon>MovieTheaterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
@@ -385,17 +407,20 @@
     <None Include="Microsoft.WindowsAzure.Caching\PerformanceCounters.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="Pages\AddTheater.aspx" />
     <Content Include="Pages\AdminHome.aspx" />
+    <Content Include="Pages\CancelTickets.aspx" />
     <Content Include="Pages\Create.aspx" />
     <Content Include="Pages\Detail.aspx" />
     <Content Include="Pages\EditUser.aspx" />
     <Content Include="Pages\Enews.aspx" />
-    <Content Include="Pages\filmRev.aspx" />
+    <Content Include="Pages\FilmReview.aspx" />
     <Content Include="Pages\GetLatestMovies.aspx" />
     <Content Include="Pages\InsertEnews.aspx" />
     <Content Include="Pages\InsertFilmReview.aspx" />
     <Content Include="Pages\latestmovie.aspx" />
     <Content Include="Pages\Login.aspx" />
+    <Content Include="Pages\MovieTheaterPage.aspx" />
     <Content Include="Pages\MyAccount.aspx" />
     <Content Include="Pages\Passwrd.aspx" />
     <Content Include="Pages\Payment.aspx" />
@@ -429,6 +454,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
+    <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />

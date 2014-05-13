@@ -18,7 +18,14 @@ namespace OnlineTicketSystem.Azure
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] == null)
+            {
+                registerBtn.Visible = true;
+            }
+            else
+            {
+                registerBtn.Visible = false;
+            }
         }
         protected void Button4_Click(object sender, EventArgs e)
         {
@@ -39,6 +46,12 @@ namespace OnlineTicketSystem.Azure
         protected void btenews_Click(object sender, EventArgs e)
         {
             Response.Redirect("Enews.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Pages/Create.aspx");
+
         }
     }
 }

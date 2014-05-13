@@ -24,30 +24,29 @@ namespace OnlineTicketSystem.Azure
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!Page.IsPostBack)
+            {
+
                 List<LatestMovies> movies = _dbContext.GetLatestMovies();
-                DdlMovie.DataSource = movies;
-                DdlMovie.DataTextField = "MovieName";
-                
-                DdlMovie.DataBind();
-
-        }
-
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-      
+                ddlMovieReview.DataSource = movies;
+                ddlMovieReview.DataTextField = "MovieName";
+                ddlMovieReview.DataValueField = "MovieKey";
+                ddlMovieReview.SelectedIndex = 0;
+                ddlMovieReview.DataBind();
+            }
         }
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
-
+           
         }
 
-        protected void TextReview_TextChanged(object sender, EventArgs e)
-        {
 
-            
+
+        protected void ddlMovieReview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LatestMovies movie = _dbContext.GetMovie(Convert.ToInt32(ddlMovieReview.SelectedItem.Value));
+            TextReview.Text = movie.Review;
         }
     }
 }

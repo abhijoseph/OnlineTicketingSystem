@@ -13,6 +13,7 @@
         <a href="Update.aspx">Change Password</a>
     </li>
     <li><a href="Ticket.aspx">Book Ticket</a></li>
+    <li><a href="CancelTickets.aspx">Cancel Ticket</a></li>
 </ul>
     </div>
     </div>

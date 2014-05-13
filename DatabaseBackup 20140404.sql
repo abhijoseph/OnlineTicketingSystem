@@ -1,4 +1,4 @@
-USE [master]
++USE [master]
 GO
 /****** Object:  Database [onlineticket]    Script Date: 04/04/2014 23:00:27 ******/
 CREATE DATABASE [onlineticket]
@@ -656,6 +656,73 @@ BEGIN
 	 AND	Password = @Password 
 END
 GO
+
+/****** Object:  StoredProcedure [dbo].[usp_GetUsers]    Script Date: 04/04/2014 23:03:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[usp_GetUsers]
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT 
+		UserKey,
+		FirstName,
+		LastName,
+		UserName,
+		Password,
+		DateOfBirth,
+		EmailId,
+		Rolekey
+		
+	FROM dbo.UserReg 
+END
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_UpdateUser]    Script Date: 04/04/2014 23:03:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: 09-Mar-2014
+-- Description:	Inserts a new user to the table UserReg
+-- =============================================
+CREATE PROCEDURE [dbo].[usp_UpdateUser] 
+	-- Add the parameters for the stored procedure here
+	@UserKey INT,
+	@FirstName VARCHAR(100), 
+	@LastName VARCHAR(100),
+	@RoleKey INT
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	--SET NOCOUNT ON;
+	IF EXISTS(SELECT 1 FROM dbo.UserReg WHERE UserKey = @UserKey)
+	BEGIN
+    -- Update statements for procedure here
+		UPDATE dbo.UserReg
+		SET Firstname = @FirstName,
+			Lastname = @LastName,
+			RoleKey = @RoleKey
+		WHERE UserKey = @UserKey
+	END
+END
+GO
+
+
 /****** Object:  StoredProcedure [dbo].[usp_GetMovieList]    Script Date: 04/04/2014 23:03:12 ******/
 SET ANSI_NULLS ON
 GO
@@ -711,6 +778,39 @@ BEGIN
 		City,
 		SeatingCapacity
 	FROM dbo.MasterTheater
+	
+END
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[usp_InsertTheater]
+	-- Add the parameters for the stored procedure here
+	@TheaterName VARCHAR(150), 
+	@City VARCHAR(20),
+	@SeatingCapacity INT
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	--SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    IF NOT EXISTS (SELECT 1 FROM dbo.MasterTheater WHERE TheaterName = @TheaterName)
+    BEGIN
+		INSERT INTO dbo.MasterTheater
+		VALUES (@TheaterName,
+			@City,
+			@SeatingCapacity)
+	END
 	
 END
 GO

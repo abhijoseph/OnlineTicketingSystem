@@ -57,6 +57,8 @@ namespace OnlineTicketSystem.Azure
 
 
                 }
+                CalendarExtender1.StartDate = DateTime.Today.AddDays(1);
+                CalendarExtender1.EndDate = DateTime.Today.AddDays(30);
             }
             
 
@@ -145,7 +147,7 @@ namespace OnlineTicketSystem.Azure
             User user = Session["user"] as User;
             int userKey = user == null ? -1 : user.UserKey; 
             DateTime selectedDate = CalendarExtender1.SelectedDate.Value;
-            string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString() + selectedDate.Day.ToString();
+            string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString("00") + selectedDate.Day.ToString("00");
             int showTimeKey = Int32.Parse(Ddltime.SelectedValue);
             _dbContext.BookTicket(theaterKey, showTimeKey, userKey, Int32.Parse(dateKey), seatMatrix);
 
@@ -201,6 +203,7 @@ namespace OnlineTicketSystem.Azure
             User user = Session["user"] as User;
             int userKey = user == null ? -1 : user.UserKey; 
             string theaterSelectedValue = Ddltheater.SelectedValue;
+            CalendarExtender1.SelectedDate = Convert.ToDateTime(txtDate.Text);
             DateTime dateSelectedValue = CalendarExtender1.SelectedDate.Value;
             string showTimeSelectedValue = Ddltime.SelectedValue;
             if (theaterSelectedValue != null &&theaterSelectedValue != string.Empty && 
@@ -209,7 +212,7 @@ namespace OnlineTicketSystem.Azure
             {
                 int theaterKey = Int32.Parse(Ddltheater.SelectedValue);
                 DateTime selectedDate = CalendarExtender1.SelectedDate.Value;
-                string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString() + selectedDate.Day.ToString();
+                string dateKey = selectedDate.Year.ToString() + selectedDate.Month.ToString("00") + selectedDate.Day.ToString("00");
                 int showTimeKey = Int32.Parse(Ddltime.SelectedValue);
                 seatsBooked = _dbContext.GetBookedSeatsforMovieTheater(theaterKey, showTimeKey, Int32.Parse(dateKey));
                 mySeats = _dbContext.GetBookedSeatsforUserforMovieTheater(theaterKey, showTimeKey, Int32.Parse(dateKey), userKey);
